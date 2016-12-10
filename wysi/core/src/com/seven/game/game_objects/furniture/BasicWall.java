@@ -1,6 +1,9 @@
 package com.seven.game.game_objects.furniture;
 
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.seven.game.game_objects.IGameObject;
+import com.seven.game.utils.AssetLoader;
 
 import java.util.List;
 
@@ -74,6 +77,7 @@ public class BasicWall implements IGameObject{
         this.rotation = rotation;
     }
 
+
     @Override
     public IGameObject checkCollision(String direction, List<IGameObject> gameObjectList) {
         return null;
@@ -82,5 +86,14 @@ public class BasicWall implements IGameObject{
     @Override
     public void takeDamage(int damage) {
 
+    }
+
+    @Override
+    public void render(SpriteBatch spriteBatch) {
+        spriteBatch.begin();
+        spriteBatch.disableBlending();
+        spriteBatch.draw(AssetLoader.spider, x, y, width, height);
+        spriteBatch.enableBlending();
+        spriteBatch.end();
     }
 }

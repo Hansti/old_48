@@ -25,6 +25,7 @@ public class GameWorld {
     }
 
     public void update(float delta) {
+
         if (Gdx.input.isKeyPressed(Input.Keys.UP)) {
             spider1.moveUp("UP", Keeper.INSTANCE);
         } else if (Gdx.input.isKeyPressed(Input.Keys.DOWN)) {

@@ -12,21 +12,13 @@ import com.seven.game.utils.Settings;
 
 public class GameRender {
     private OrthographicCamera camera;
-    private ShapeRenderer shapeRenderer;
     private SpriteBatch batcher;
-    private GameWorld myWorld;
 
     public GameRender(GameWorld gameWorld) {
-        myWorld = gameWorld;
-
         camera = new OrthographicCamera();
         camera.setToOrtho(true, Settings.widthDisplay, Settings.heightDisplay);
-
         batcher = new SpriteBatch();
         batcher.setProjectionMatrix(camera.combined);
-
-        shapeRenderer = new ShapeRenderer();
-        shapeRenderer.setProjectionMatrix(camera.combined);
     }
 
     public void render(float runTime) {
@@ -42,10 +34,7 @@ public class GameRender {
 
 
         for (IGameObject object: Keeper.INSTANCE.getAllObjects()) {
-            shapeRenderer.begin(ShapeRenderer.ShapeType.Filled);
-            shapeRenderer.setColor(1, 1, 1, 1);
-            shapeRenderer.rect(object.getX(), object.getY(), object.getWidth(), object.getHeight());
-            shapeRenderer.end();
+            object.render(batcher);
         }
     }
 }

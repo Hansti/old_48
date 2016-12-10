@@ -1,11 +1,16 @@
 package com.seven.game.game_objects.spider;
 
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.math.Intersector;
 import com.badlogic.gdx.math.Rectangle;
 import com.seven.game.game_objects.IGameObject;
 import com.seven.game.game_objects.game_object_state.IGameObjectState;
 import com.seven.game.game_objects.interactions.*;
+import com.seven.game.game_world.GameRender;
 import com.seven.game.game_world.IKepper;
+import com.seven.game.utils.AssetLoader;
+import com.seven.game.utils.Settings;
 
 import java.util.List;
 
@@ -116,6 +121,15 @@ public class BasicSpider implements IGameObject, IAttack, IClimb, IHide, IMove, 
     @Override
     public void takeDamage(int damage) {
 
+    }
+
+    @Override
+    public void render(SpriteBatch spriteBatch) {
+        spriteBatch.begin();
+        spriteBatch.disableBlending();
+        spriteBatch.draw(AssetLoader.spider, x, y, width, height);
+        spriteBatch.enableBlending();
+        spriteBatch.end();
     }
 
     @Override

@@ -1,5 +1,7 @@
 package com.seven.game.game_objects.furniture;
 
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.math.Intersector;
 import com.badlogic.gdx.math.Rectangle;
 import com.seven.game.game_objects.IGameObject;
@@ -7,6 +9,7 @@ import com.seven.game.game_objects.game_object_state.StoveState;
 import com.seven.game.game_objects.interactions.IAttack;
 import com.seven.game.game_objects.interactions.IClimb;
 import com.seven.game.game_objects.interactions.IHide;
+import com.seven.game.utils.AssetLoader;
 
 import java.util.List;
 
@@ -118,6 +121,15 @@ public class Stove implements IGameObject, IHide, IClimb, IAttack {
     @Override
     public void takeDamage(int damage) {
 
+    }
+
+    @Override
+    public void render(SpriteBatch spriteBatch) {
+        spriteBatch.begin();
+        spriteBatch.disableBlending();
+        spriteBatch.draw(AssetLoader.spider, x, y, width, height);
+        spriteBatch.enableBlending();
+        spriteBatch.end();
     }
 
     @Override
