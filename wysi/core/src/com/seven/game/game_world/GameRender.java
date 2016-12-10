@@ -6,6 +6,7 @@ import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.seven.game.utils.AssetLoader;
+import com.seven.game.utils.Settings;
 
 public class GameRender {
     private OrthographicCamera camera;
@@ -17,7 +18,7 @@ public class GameRender {
         myWorld = gameWorld;
 
         camera = new OrthographicCamera();
-        camera.setToOrtho(true, 800, 600);
+        camera.setToOrtho(true, Settings.widthDisplay, Settings.heightDisplay);
 
         batcher = new SpriteBatch();
         batcher.setProjectionMatrix(camera.combined);
@@ -33,7 +34,7 @@ public class GameRender {
 
         batcher.begin();
         batcher.disableBlending();
-        batcher.draw(AssetLoader.carpet, 0, 0, 800, 600);
+        batcher.draw(AssetLoader.carpet, 0, 0, Settings.widthDisplay, Settings.heightDisplay);
         batcher.enableBlending();
         batcher.end();
     }

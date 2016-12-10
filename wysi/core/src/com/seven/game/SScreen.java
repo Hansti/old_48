@@ -6,9 +6,6 @@ import com.seven.game.game_world.GameRender;
 import com.seven.game.game_world.GameWorld;
 
 public class SScreen implements Screen {
-    float gameWidth = 600;
-    float gameHeight = 400;
-
     GameRender render;
     GameWorld gameWorld;
 
