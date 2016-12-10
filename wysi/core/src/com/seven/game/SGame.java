@@ -2,7 +2,6 @@ package com.seven.game;
 
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.assets.loaders.AssetLoader;
 
 public class SGame extends Game{
     @Override
