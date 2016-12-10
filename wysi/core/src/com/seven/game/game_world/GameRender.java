@@ -17,7 +17,7 @@ public class GameRender {
         myWorld = gameWorld;
 
         camera = new OrthographicCamera();
-        camera.setToOrtho(true, 100, 200);
+        camera.setToOrtho(true, 800, 600);
 
         batcher = new SpriteBatch();
         batcher.setProjectionMatrix(camera.combined);
@@ -33,7 +33,7 @@ public class GameRender {
 
         batcher.begin();
         batcher.disableBlending();
-        batcher.draw(AssetLoader.carpet, 0, 0, 400, 600);
+        batcher.draw(AssetLoader.carpet, 0, 0, 800, 600);
         batcher.enableBlending();
         batcher.end();
     }
