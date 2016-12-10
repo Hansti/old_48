@@ -5,6 +5,7 @@ import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
+import com.seven.game.game_objects.IGameObject;
 import com.seven.game.game_objects.furniture.Stove;
 import com.seven.game.game_objects.game_object_state.StoveState;
 import com.seven.game.utils.AssetLoader;
@@ -40,10 +41,17 @@ public class GameRender {
         batcher.enableBlending();
         batcher.end();
 
-        Stove stove = new Stove(50, 50, 50, 50, 5, new StoveState());
+/*        Stove stove = new Stove(50, 50, 50, 50, 5, new StoveState());
         shapeRenderer.begin(ShapeRenderer.ShapeType.Filled);
         shapeRenderer.setColor(1, 1, 1, 1);
         shapeRenderer.rect(stove.getX(), stove.getY(), stove.getWidth(), stove.getHeight());
-        shapeRenderer.end();
+        shapeRenderer.end();*/
+
+        for (IGameObject object: Keeper.INSTANCE.getAllObjects()) {
+            shapeRenderer.begin(ShapeRenderer.ShapeType.Filled);
+            shapeRenderer.setColor(1, 1, 1, 1);
+            shapeRenderer.rect(object.getX(), object.getY(), object.getWidth(), object.getHeight());
+            shapeRenderer.end();
+        }
     }
 }
