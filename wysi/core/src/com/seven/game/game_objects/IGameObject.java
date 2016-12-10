@@ -1,4 +1,4 @@
-package game_objects;
+package com.seven.game.game_objects;
 
 public interface IGameObject {
     void update(final float delta);
