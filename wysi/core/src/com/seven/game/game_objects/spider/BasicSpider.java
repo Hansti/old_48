@@ -1,5 +1,6 @@
 package com.seven.game.game_objects.spider;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
@@ -23,6 +24,7 @@ public class BasicSpider implements IGameObject, IAttack, IClimb, IHide, IMove, 
     private float rotation;
     private float width;
     private float height;
+    private float elapsedTime = 0;
 
     public BasicSpider(float velocity, IGameObjectState state, float x, float y, float rotation, float width, float height) {
         this.velocity = velocity;
@@ -127,9 +129,8 @@ public class BasicSpider implements IGameObject, IAttack, IClimb, IHide, IMove, 
     @Override
     public void render(SpriteBatch spriteBatch) {
         spriteBatch.begin();
-        spriteBatch.disableBlending();
-        spriteBatch.draw(AssetLoader.spider, x, y, width, height);
-        spriteBatch.enableBlending();
+        elapsedTime += Gdx.graphics.getDeltaTime();
+        spriteBatch.draw(AssetLoader.birdAnimation.getKeyFrame(elapsedTime, true), x, y, width, height);
         spriteBatch.end();
     }
 
