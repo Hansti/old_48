@@ -1,4 +1,4 @@
-package game_objects.interactions;
+package com.seven.game.game_objects.interactions;
 
 public interface IMove {
     void moveUp();

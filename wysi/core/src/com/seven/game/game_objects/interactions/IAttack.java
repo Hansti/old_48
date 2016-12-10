@@ -1,6 +1,6 @@
-package game_objects.interactions;
+package com.seven.game.game_objects.interactions;
 
-import game_objects.IGameObject;
+import com.seven.game.game_objects.IGameObject;
 
 public interface IAttack {
     void attack(IGameObject gameObject);
