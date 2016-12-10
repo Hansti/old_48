@@ -1,7 +1,5 @@
-package game_objects.interactions;
+package com.seven.game.game_objects.interactions;
 
-/**
- * Created by mtvarkovsky on 12/10/16.
- */
 public interface IHide {
+    Boolean possibleToHide();
 }
