@@ -22,4 +22,6 @@ public interface IGameObject {
     float getRotation();
 
     void setRotation(final float rotation);
+
+    IGameObject checkCollision(String direction);
 }
