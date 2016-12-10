@@ -25,5 +25,7 @@ public interface IGameObject {
 
     void setRotation(final float rotation);
 
-    IGameObject checkCollision(String direction, List<IGameObject> gameObjects);
+    IGameObject checkCollision(String direction, List<IGameObject> gameObjectList);
+
+    void takeDamage(int damage);
 }

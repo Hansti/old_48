@@ -2,10 +2,17 @@ package com.seven.game;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
+import com.seven.game.game_world.GameRender;
+import com.seven.game.game_world.GameWorld;
 
 public class SScreen implements Screen {
-    float gameWidth = 600;
-    float gameHeight = 400;
+    GameRender render;
+    GameWorld gameWorld;
+
+    public SScreen() {
+        gameWorld = new GameWorld();
+        render = new GameRender(gameWorld);
+    }
 
     @Override
     public void show() {
@@ -16,6 +23,7 @@ public class SScreen implements Screen {
     public void render(float delta) {
         Gdx.app.log("GameScreen FPS", (1/delta) + "");
 
+        render.render(delta);
     }
 
     @Override
