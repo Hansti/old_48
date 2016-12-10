@@ -2,8 +2,10 @@ package com.seven.game;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
+import com.seven.game.game_objects.spider.BasicSpider;
 import com.seven.game.game_world.GameRender;
 import com.seven.game.game_world.GameWorld;
+import com.seven.game.utils.InputHandler;
 
 public class SScreen implements Screen {
     GameRender render;
@@ -12,6 +14,7 @@ public class SScreen implements Screen {
     public SScreen() {
         gameWorld = new GameWorld();
         render = new GameRender(gameWorld);
+        Gdx.input.setInputProcessor(new InputHandler((BasicSpider) gameWorld.getGameObject()));
     }
 
     @Override
@@ -21,7 +24,7 @@ public class SScreen implements Screen {
 
     @Override
     public void render(float delta) {
-        Gdx.app.log("GameScreen FPS", (1/delta) + "");
+        //Gdx.app.log("GameScreen FPS", (1/delta) + "");
 
         render.render(delta);
     }

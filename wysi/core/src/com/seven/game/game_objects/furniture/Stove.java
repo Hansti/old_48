@@ -1,8 +1,8 @@
 package com.seven.game.game_objects.furniture;
 
+import com.badlogic.gdx.math.Intersector;
 import com.badlogic.gdx.math.Rectangle;
 import com.seven.game.game_objects.IGameObject;
-import com.seven.game.game_objects.game_object_state.IGameObjectState;
 import com.seven.game.game_objects.game_object_state.StoveState;
 import com.seven.game.game_objects.interactions.IAttack;
 import com.seven.game.game_objects.interactions.IClimb;
@@ -89,22 +89,28 @@ public class Stove implements IGameObject, IHide, IClimb, IAttack {
 
     @Override
     public IGameObject checkCollision(String direction, List<IGameObject> gameObjectList) {
-        float xTranslation = 0;
-        float yTranslation = 0;
+        float xTranslation = x;
+        float yTranslation = y;
 
         if (direction.equals("UP")) {
-            yTranslation = y - height;
+            yTranslation = y - 2;
         } else if (direction.equals("DOWN")) {
-            yTranslation = y + height;
+            yTranslation = y + 2;
         } else if (direction.equals("LEFT")) {
-            xTranslation = x - width;
+            xTranslation = x - 2;
         } else if (direction.equals("RIGHT")) {
-            xTranslation = x + width;
+            xTranslation = x + 2;
         }
 
-        for (IGameObject gameObject: gameObjectList){
-            if (new Rectangle(xTranslation, yTranslation, width, height).overlaps(new Rectangle(gameObject.getX(), gameObject.getY(), gameObject.getWidth(), gameObject.getHeight()))) {
-                return gameObject;
+        Rectangle currentObjectRectangle = new Rectangle(xTranslation, yTranslation, width, height);
+
+        for (IGameObject gameObject : gameObjectList) {
+            if (!this.equals(gameObject)) {
+                Rectangle gameObjectRectangle = new Rectangle(gameObject.getX(), gameObject.getY(), gameObject.getWidth(), gameObject.getHeight());
+
+                if (Intersector.overlaps(currentObjectRectangle, gameObjectRectangle)) {
+                    return gameObject;
+                }
             }
         }
 

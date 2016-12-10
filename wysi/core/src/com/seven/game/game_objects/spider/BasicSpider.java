@@ -1,9 +1,11 @@
 package com.seven.game.game_objects.spider;
 
+import com.badlogic.gdx.math.Intersector;
 import com.badlogic.gdx.math.Rectangle;
 import com.seven.game.game_objects.IGameObject;
 import com.seven.game.game_objects.game_object_state.IGameObjectState;
 import com.seven.game.game_objects.interactions.*;
+import com.seven.game.game_world.IKepper;
 
 import java.util.List;
 
@@ -83,25 +85,28 @@ public class BasicSpider implements IGameObject, IAttack, IClimb, IHide, IMove, 
 
     @Override
     public IGameObject checkCollision(String direction, List<IGameObject> gameObjectList) {
-        float xTranslation = 0;
-        float yTranslation = 0;
+        float xTranslation = x;
+        float yTranslation = y;
 
         if (direction.equals("UP")) {
-            yTranslation = y - height;
+            yTranslation = y - 2;
         } else if (direction.equals("DOWN")) {
-            yTranslation = y + height;
+            yTranslation = y + 2;
         } else if (direction.equals("LEFT")) {
-            xTranslation = x - width;
+            xTranslation = x - 2;
         } else if (direction.equals("RIGHT")) {
-            xTranslation = x + width;
+            xTranslation = x + 2;
         }
 
-        for (IGameObject gameObject : gameObjectList) {
-            Rectangle spiderRectangle = new Rectangle(xTranslation, yTranslation, width, height);
-            Rectangle gameObjectRectangle = new Rectangle(gameObject.getX(), gameObject.getY(), gameObject.getWidth(), gameObject.getHeight());
+        Rectangle currentObjectRectangle = new Rectangle(xTranslation, yTranslation, width, height);
 
-            if (spiderRectangle.overlaps(gameObjectRectangle)) {
-                return gameObject;
+        for (IGameObject gameObject : gameObjectList) {
+            if (!this.equals(gameObject)) {
+                Rectangle gameObjectRectangle = new Rectangle(gameObject.getX(), gameObject.getY(), gameObject.getWidth(), gameObject.getHeight());
+
+                if (Intersector.overlaps(currentObjectRectangle, gameObjectRectangle)) {
+                    return gameObject;
+                }
             }
         }
 
@@ -114,22 +119,39 @@ public class BasicSpider implements IGameObject, IAttack, IClimb, IHide, IMove, 
     }
 
     @Override
-    public void moveUp() {
+    public void moveUp(String direction, IKepper kepper) {
+        IGameObject collidedObject = checkCollision(direction, kepper.getAllObjects());
+
+        if (collidedObject == null) {
+            y -= 2;
+        }
     }
 
     @Override
-    public void moveDown() {
+    public void moveDown(String direction, IKepper kepper) {
+        IGameObject collidedObject = checkCollision(direction, kepper.getAllObjects());
 
+        if (collidedObject == null) {
+            y += 2;
+        }
     }
 
     @Override
-    public void moveLeft() {
+    public void moveLeft(String direction, IKepper kepper) {
+        IGameObject collidedObject = checkCollision(direction, kepper.getAllObjects());
 
+        if (collidedObject == null) {
+            x -= 2;
+        }
     }
 
     @Override
-    public void moveRight() {
+    public void moveRight(String direction, IKepper kepper) {
+        IGameObject collidedObject = checkCollision(direction, kepper.getAllObjects());
 
+        if (collidedObject == null) {
+            x += 2;
+        }
     }
 
     @Override
@@ -150,5 +172,34 @@ public class BasicSpider implements IGameObject, IAttack, IClimb, IHide, IMove, 
     @Override
     public void attack(IGameObject gameObject) {
 
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof BasicSpider)) return false;
+
+        BasicSpider that = (BasicSpider) o;
+
+        if (Float.compare(that.velocity, velocity) != 0) return false;
+        if (Float.compare(that.getX(), getX()) != 0) return false;
+        if (Float.compare(that.getY(), getY()) != 0) return false;
+        if (Float.compare(that.getRotation(), getRotation()) != 0) return false;
+        if (Float.compare(that.getWidth(), getWidth()) != 0) return false;
+        if (Float.compare(that.getHeight(), getHeight()) != 0) return false;
+        return state != null ? state.equals(that.state) : that.state == null;
+
+    }
+
+    @Override
+    public int hashCode() {
+        int result = (velocity != +0.0f ? Float.floatToIntBits(velocity) : 0);
+        result = 31 * result + (state != null ? state.hashCode() : 0);
+        result = 31 * result + (getX() != +0.0f ? Float.floatToIntBits(getX()) : 0);
+        result = 31 * result + (getY() != +0.0f ? Float.floatToIntBits(getY()) : 0);
+        result = 31 * result + (getRotation() != +0.0f ? Float.floatToIntBits(getRotation()) : 0);
+        result = 31 * result + (getWidth() != +0.0f ? Float.floatToIntBits(getWidth()) : 0);
+        result = 31 * result + (getHeight() != +0.0f ? Float.floatToIntBits(getHeight()) : 0);
+        return result;
     }
 }
