@@ -32,9 +32,7 @@ public class Stove implements IGameObject, IHide, IClimb, IAttack {
 
     @Override
     public void update(float delta) {
-        if(state.getState()){
 
-        }
     }
 
     @Override

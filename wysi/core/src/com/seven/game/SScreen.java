@@ -25,7 +25,6 @@ public class SScreen implements Screen {
     @Override
     public void render(float delta) {
         //Gdx.app.log("GameScreen FPS", (1/delta) + "");
-
         render.render(delta);
     }
 
