@@ -9,7 +9,8 @@ public class AssetLoader {
 
     public static void load() {
         carpet = new Texture("kover.jpg");
-        spider = new Texture("temp_spider.png");
+
+        spider = new Texture("badlogic.jpg");
     }
 
     public static void dispose() {
