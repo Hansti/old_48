@@ -33,15 +33,6 @@ public class GameRender {
         Gdx.gl.glClearColor(0, 0, 0, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 
-        if (Gdx.input.isKeyPressed(Input.Keys.UP)) {
-            myWorld.getGameObject().moveUp("UP", Keeper.INSTANCE);
-        } else if (Gdx.input.isKeyPressed(Input.Keys.DOWN)) {
-            myWorld.getGameObject().moveDown("DOWN", Keeper.INSTANCE);
-        } else if (Gdx.input.isKeyPressed(Input.Keys.LEFT)) {
-            myWorld.getGameObject().moveLeft("LEFT", Keeper.INSTANCE);
-        } else if (Gdx.input.isKeyPressed(Input.Keys.RIGHT)) {
-            myWorld.getGameObject().moveRight("RIGHT", Keeper.INSTANCE);
-        }
 
         batcher.begin();
         batcher.disableBlending();
@@ -49,11 +40,6 @@ public class GameRender {
         batcher.enableBlending();
         batcher.end();
 
-/*        Stove stove = new Stove(50, 50, 50, 50, 5, new StoveState());
-        shapeRenderer.begin(ShapeRenderer.ShapeType.Filled);
-        shapeRenderer.setColor(1, 1, 1, 1);
-        shapeRenderer.rect(stove.getX(), stove.getY(), stove.getWidth(), stove.getHeight());
-        shapeRenderer.end();*/
 
         for (IGameObject object: Keeper.INSTANCE.getAllObjects()) {
             shapeRenderer.begin(ShapeRenderer.ShapeType.Filled);
