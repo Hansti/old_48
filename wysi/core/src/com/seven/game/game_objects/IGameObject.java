@@ -1,5 +1,7 @@
 package com.seven.game.game_objects;
 
+import java.util.List;
+
 public interface IGameObject {
     void update(final float delta);
 
@@ -23,5 +25,7 @@ public interface IGameObject {
 
     void setRotation(final float rotation);
 
-    IGameObject checkCollision(String direction);
+    IGameObject checkCollision(String direction, List<IGameObject> gameObjectList);
+
+    void takeDamage(int damage);
 }
