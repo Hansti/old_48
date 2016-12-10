@@ -110,7 +110,7 @@ public class BasicSpider implements IGameObject, IAttack, IClimb, IHide, IMove, 
 
     @Override
     public void takeDamage(int damage) {
-        
+
     }
 
     @Override
@@ -134,12 +134,12 @@ public class BasicSpider implements IGameObject, IAttack, IClimb, IHide, IMove, 
 
     @Override
     public Boolean possibleToHide() {
-        return null;
+        return false;
     }
 
     @Override
     public Boolean possibleToClimb() {
-        return null;
+        return false;
     }
 
     @Override
