@@ -29,6 +29,7 @@ public class BasicSpider implements IGameObject, IAttack, IClimb, IHide, IMove, 
     private Boolean isMoved;
     private Boolean isHide;
     private Boolean isClimb;
+    private Boolean isDead;
     private int life = 100;
 
     public BasicSpider(float velocity, IGameObjectState state, float x, float y, float rotation, float width, float height) {
@@ -42,6 +43,15 @@ public class BasicSpider implements IGameObject, IAttack, IClimb, IHide, IMove, 
         isMoved = false;
         isHide = false;
         isClimb = false;
+        isDead = false;
+    }
+
+    public Boolean getDead() {
+        return isDead;
+    }
+
+    public void setDead(Boolean dead) {
+        isDead = dead;
     }
 
     public void climbUp(String direction, IKepper kepper) {
@@ -147,7 +157,7 @@ public class BasicSpider implements IGameObject, IAttack, IClimb, IHide, IMove, 
     @Override
     public void update(float delta) {
         if (life <= 0){
-            Gdx.app.exit();
+            isDead = true;
         }
     }
 

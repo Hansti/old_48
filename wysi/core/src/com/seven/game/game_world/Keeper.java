@@ -4,6 +4,7 @@ import com.seven.game.game_objects.IGameObject;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 
 public class Keeper implements IKepper {
@@ -12,7 +13,7 @@ public class Keeper implements IKepper {
     private List<IGameObject> objects;
 
     public Keeper() {
-        objects = new ArrayList<IGameObject>();
+        objects = new CopyOnWriteArrayList<IGameObject>();
     }
 
     @Override
