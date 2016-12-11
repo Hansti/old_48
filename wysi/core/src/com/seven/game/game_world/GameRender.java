@@ -28,7 +28,8 @@ public class GameRender {
 
         batcher.begin();
         batcher.disableBlending();
-        batcher.draw(AssetLoader.carpet, 0, 0, Settings.widthDisplay, Settings.heightDisplay);
+        batcher.draw(AssetLoader.floor, 0, 0, Settings.widthDisplay, Settings.heightDisplay);
+        batcher.draw(AssetLoader.carpet, 200, 200, Settings.widthDisplay-300, Settings.heightDisplay-300);
         batcher.enableBlending();
         batcher.end();
 
