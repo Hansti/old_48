@@ -2,6 +2,7 @@ package com.seven.game.game_world;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
+import com.seven.game.game_objects.IGameObject;
 import com.seven.game.game_objects.furniture.BasicWall;
 import com.seven.game.game_objects.furniture.Stove;
 import com.seven.game.game_objects.game_object_state.StoveState;
@@ -65,6 +66,10 @@ public class GameWorld {
             spider1.moveLeft("LEFT", Keeper.INSTANCE);
         } else if (Gdx.input.isKeyPressed(Input.Keys.RIGHT)) {
             spider1.moveRight("RIGHT", Keeper.INSTANCE);
+        }
+
+        for (IGameObject object: Keeper.INSTANCE.getAllObjects()) {
+            object.update(delta);
         }
 
     }

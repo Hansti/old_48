@@ -17,7 +17,7 @@ import com.sun.org.apache.xpath.internal.operations.Bool;
 
 import java.util.List;
 
-public class BasicSpider implements IGameObject, IAttack, IClimb, IHide, IMove, IEat {
+public class BasicSpider implements IGameObject, IAttack, IClimb, IHide, IMove, IEat, IDamage {
     private float velocity;
     private IGameObjectState state;
     private float x;
@@ -29,6 +29,7 @@ public class BasicSpider implements IGameObject, IAttack, IClimb, IHide, IMove, 
     private Boolean isMoved;
     private Boolean isHide;
     private Boolean isClimb;
+    private int life = 100;
 
     public BasicSpider(float velocity, IGameObjectState state, float x, float y, float rotation, float width, float height) {
         this.velocity = velocity;
@@ -131,13 +132,23 @@ public class BasicSpider implements IGameObject, IAttack, IClimb, IHide, IMove, 
         return isHide;
     }
 
+    public void setClimb(Boolean climb) {
+        isClimb = climb;
+    }
+
+    public Boolean getClimb() {
+        return isClimb;
+    }
+
     public void setMoved(Boolean moved) {
         isMoved = moved;
     }
 
     @Override
     public void update(float delta) {
-
+        if (life <= 0){
+            Gdx.app.exit();
+        }
     }
 
     @Override
@@ -338,5 +349,10 @@ public class BasicSpider implements IGameObject, IAttack, IClimb, IHide, IMove, 
     @Override
     public void attack(IDamage gameObject) {
 
+    }
+
+    @Override
+    public void takeDamage(int damage) {
+        life -= damage;
     }
 }

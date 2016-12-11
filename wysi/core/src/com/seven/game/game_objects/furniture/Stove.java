@@ -12,6 +12,8 @@ import com.seven.game.game_objects.interactions.IAttack;
 import com.seven.game.game_objects.interactions.IClimb;
 import com.seven.game.game_objects.interactions.IDamage;
 import com.seven.game.game_objects.interactions.IHide;
+import com.seven.game.game_objects.spider.BasicSpider;
+import com.seven.game.game_world.Keeper;
 import com.seven.game.utils.AssetLoader;
 
 import java.util.List;
@@ -38,7 +40,22 @@ public class Stove implements IGameObject, IHide, IClimb, IAttack {
 
     @Override
     public void update(float delta) {
+        Rectangle currentObjectRectangle = new Rectangle(x, y, width, height);
 
+        for (IGameObject gameObject : Keeper.INSTANCE.getAllObjects()) {
+        if (state.getState()) {
+            if (!this.equals(gameObject)) {
+                Rectangle gameObjectRectangle = new Rectangle(gameObject.getX(), gameObject.getY(), gameObject.getWidth(), gameObject.getHeight());
+
+                if (Intersector.overlaps(currentObjectRectangle, gameObjectRectangle)) {
+                    BasicSpider spider= (BasicSpider)gameObject;
+                    if (spider.getClimb()) {
+                        spider.takeDamage(1);
+                    }
+                }
+            }
+        }
+        }
     }
 
     @Override
