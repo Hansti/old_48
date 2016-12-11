@@ -1,7 +1,7 @@
 package com.seven.game.game_objects.game_object_state;
 
 public class StoveState implements IGameObjectState {
-    private Boolean isActive;
+    private Boolean isActive = false;
 
     @Override
     public void transitionToNewState(String state) {

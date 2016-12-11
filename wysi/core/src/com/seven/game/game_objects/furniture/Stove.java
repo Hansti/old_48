@@ -1,5 +1,7 @@
 package com.seven.game.game_objects.furniture;
 
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.math.Intersector;
@@ -125,11 +127,28 @@ public class Stove implements IGameObject, IHide, IClimb, IAttack {
 
     @Override
     public void render(SpriteBatch spriteBatch) {
-        spriteBatch.begin();
-        spriteBatch.disableBlending();
-        spriteBatch.draw(AssetLoader.stove, x, y, width, height);
-        spriteBatch.enableBlending();
-        spriteBatch.end();
+        if (Gdx.input.isKeyPressed(Input.Keys.F12)) {
+            if (state.getState()) {
+                state.transitionToNewState("unactiv");
+
+            } else {
+                state.transitionToNewState("active");
+            }
+        }
+
+        if (state.getState()) {
+            spriteBatch.begin();
+            spriteBatch.disableBlending();
+            spriteBatch.draw(AssetLoader.stoveOn, x, y, width, height);
+            spriteBatch.enableBlending();
+            spriteBatch.end();
+        } else {
+            spriteBatch.begin();
+            spriteBatch.disableBlending();
+            spriteBatch.draw(AssetLoader.stoveOff, x, y, width, height);
+            spriteBatch.enableBlending();
+            spriteBatch.end();
+        }
     }
 
     @Override

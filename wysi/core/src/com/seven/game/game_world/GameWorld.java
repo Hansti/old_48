@@ -20,7 +20,7 @@ public class GameWorld {
         Keeper.INSTANCE.addObject(new BasicWall(0, Settings.heightDisplay - 10, Settings.widthDisplay, Settings.heightDisplay, 0));
         ///////
 
-        Keeper.INSTANCE.addObject(new Stove(500,300, 50,50, 0,new StoveState()));
+        Keeper.INSTANCE.addObject(new Stove(500,10, 50,50, 0,new StoveState()));
         Keeper.INSTANCE.addObject(spider1);
     }
 
