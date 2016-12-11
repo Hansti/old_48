@@ -3,11 +3,12 @@ package com.seven.game.game_objects.furniture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.seven.game.game_objects.IGameObject;
+import com.seven.game.game_objects.interactions.IHide;
 import com.seven.game.utils.AssetLoader;
 
 import java.util.List;
 
-public class BasicWall implements IGameObject{
+public class BasicWall implements IGameObject, IHide{
     private float x;
     private float y;
     private float rotation;
@@ -84,5 +85,10 @@ public class BasicWall implements IGameObject{
         spriteBatch.draw(AssetLoader.wall, x, y, width, height);
         spriteBatch.enableBlending();
         spriteBatch.end();
+    }
+
+    @Override
+    public Boolean possibleToHide() {
+        return false;
     }
 }

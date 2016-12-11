@@ -26,7 +26,8 @@ public class BasicSpider implements IGameObject, IAttack, IClimb, IHide, IMove, 
     private float width;
     private float height;
     private float elapsedTime = 0;
-    private Boolean isMoved = false;
+    private Boolean isMoved;
+    private Boolean isHide;
 
     public BasicSpider(float velocity, IGameObjectState state, float x, float y, float rotation, float width, float height) {
         this.velocity = velocity;
@@ -36,6 +37,56 @@ public class BasicSpider implements IGameObject, IAttack, IClimb, IHide, IMove, 
         this.rotation = rotation;
         this.width = width;
         this.height = height;
+        isMoved = false;
+        isHide = false;
+    }
+
+    public void hideUp(String direction, IKepper kepper) {
+        isMoved = true;
+        IHide collidedObject = (IHide) checkCollision(direction, kepper.getAllObjects());
+
+        if (collidedObject != null && collidedObject.possibleToHide()) {
+            y -= 2;
+            isHide = true;
+        }
+    }
+
+    public void hideDown(String direction, IKepper kepper) {
+        isMoved = true;
+        IHide collidedObject = (IHide) checkCollision(direction, kepper.getAllObjects());
+
+        if (collidedObject != null && collidedObject.possibleToHide()) {
+            y += 2;
+            isHide = true;
+        }
+    }
+
+    public void hideLeft(String direction, IKepper kepper) {
+        isMoved = true;
+        IHide collidedObject = (IHide) checkCollision(direction, kepper.getAllObjects());
+
+        if (collidedObject != null && collidedObject.possibleToHide()) {
+            x -= 2;
+            isHide = true;
+        }
+    }
+
+    public void hideRight(String direction, IKepper kepper) {
+        isMoved = true;
+        IHide collidedObject = (IHide) checkCollision(direction, kepper.getAllObjects());
+
+        if (collidedObject != null && collidedObject.possibleToHide()) {
+            x += 2;
+            isHide = true;
+        }
+    }
+
+    public void setHide(Boolean hide) {
+        isHide = hide;
+    }
+
+    public Boolean getHide() {
+        return isHide;
     }
 
     public void setMoved(Boolean moved) {
@@ -129,7 +180,13 @@ public class BasicSpider implements IGameObject, IAttack, IClimb, IHide, IMove, 
 
     @Override
     public void render(SpriteBatch spriteBatch) {
-        if (isMoved) {
+        if (isHide){
+            spriteBatch.begin();
+            elapsedTime += Gdx.graphics.getDeltaTime();
+            spriteBatch.disableBlending();
+            spriteBatch.draw(AssetLoader.spiderAnimation.getKeyFrame(elapsedTime, true), x, y, width, height);
+            spriteBatch.end();
+        } else if (isMoved) {
             spriteBatch.begin();
             elapsedTime += Gdx.graphics.getDeltaTime();
             spriteBatch.draw(AssetLoader.spiderAnimation.getKeyFrame(elapsedTime, true), x, y, width, height);
@@ -148,36 +205,43 @@ public class BasicSpider implements IGameObject, IAttack, IClimb, IHide, IMove, 
 
         if (collidedObject == null) {
             y -= 2;
+            isHide = false;
         }
     }
 
     @Override
     public void moveDown(String direction, IKepper kepper) {
         isMoved = true;
+
         IGameObject collidedObject = checkCollision(direction, kepper.getAllObjects());
 
         if (collidedObject == null) {
             y += 2;
+            isHide = false;
         }
     }
 
     @Override
     public void moveLeft(String direction, IKepper kepper) {
         isMoved = true;
+
         IGameObject collidedObject = checkCollision(direction, kepper.getAllObjects());
 
         if (collidedObject == null) {
             x -= 2;
+            isHide = false;
         }
     }
 
     @Override
     public void moveRight(String direction, IKepper kepper) {
         isMoved = true;
+
         IGameObject collidedObject = checkCollision(direction, kepper.getAllObjects());
 
         if (collidedObject == null) {
             x += 2;
+            isHide = false;
         }
     }
 
