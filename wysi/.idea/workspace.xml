@@ -39,31 +39,22 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="BasicSpider.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="BasicSpider.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/core/src/com/seven/game/game_objects/spider/BasicSpider.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1050">
-              <caret line="133" column="0" selection-start-line="133" selection-start-column="0" selection-end-line="133" selection-end-column="0" />
+            <state relative-caret-position="210">
+              <caret line="144" column="30" selection-start-line="144" selection-start-column="30" selection-end-line="144" selection-end-column="30" />
               <folding>
+                <element signature="e#1445#1446#0" expanded="true" />
+                <element signature="e#1476#1477#0" expanded="true" />
                 <element signature="method#checkCollision#0;class#BasicSpider#0" expanded="false" />
                 <element signature="method#takeDamage#0;class#BasicSpider#0" expanded="false" />
-                <element signature="method#moveUp#0;class#BasicSpider#0" expanded="false" />
-                <element signature="method#moveDown#0;class#BasicSpider#0" expanded="false" />
-                <element signature="method#moveLeft#0;class#BasicSpider#0" expanded="false" />
-                <element signature="method#moveRight#0;class#BasicSpider#0" expanded="false" />
                 <element signature="method#eat#0;class#BasicSpider#0" expanded="false" />
                 <element signature="method#attack#0;class#BasicSpider#0" expanded="false" />
                 <element signature="method#equals#0;class#BasicSpider#0" expanded="false" />
                 <element signature="method#hashCode#0;class#BasicSpider#0" expanded="false" />
               </folding>
             </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="texture.png" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/assets/texture.png">
-          <provider selected="true" editor-type-id="images">
-            <state />
           </provider>
         </entry>
       </file>
@@ -87,21 +78,33 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AssetLoader.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/src/com/seven/game/utils/AssetLoader.java">
+      <file leaf-file-name="SScreen.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/src/com/seven/game/SScreen.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="28" column="48" selection-start-line="28" selection-start-column="48" selection-end-line="28" selection-end-column="48" />
+            <state relative-caret-position="210">
+              <caret line="14" column="43" selection-start-line="14" selection-start-column="43" selection-end-line="14" selection-end-column="43" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GameWorld.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/src/com/seven/game/game_world/GameWorld.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="27" column="30" selection-start-line="27" selection-start-column="30" selection-end-line="27" selection-end-column="30" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GameWorld.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/core/src/com/seven/game/game_world/GameWorld.java">
+      <file leaf-file-name="AssetLoader.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/src/com/seven/game/utils/AssetLoader.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+            <state relative-caret-position="390">
+              <caret line="41" column="34" selection-start-line="41" selection-start-column="34" selection-end-line="41" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -892,13 +895,13 @@
       <list>
         <option value="$PROJECT_DIR$/core/src/com/seven/game/SScreen.java" />
         <option value="$PROJECT_DIR$/core/src/com/seven/game/game_objects/IGameObject.java" />
-        <option value="$PROJECT_DIR$/core/src/com/seven/game/game_objects/spider/BasicSpider.java" />
         <option value="$PROJECT_DIR$/core/src/com/seven/game/game_objects/furniture/BasicWall.java" />
         <option value="$PROJECT_DIR$/core/src/com/seven/game/game_world/GameRender.java" />
-        <option value="$PROJECT_DIR$/core/src/com/seven/game/utils/AssetLoader.java" />
         <option value="$PROJECT_DIR$/core/src/com/seven/game/game_objects/game_object_state/StoveState.java" />
         <option value="$PROJECT_DIR$/core/src/com/seven/game/game_objects/furniture/Stove.java" />
         <option value="$PROJECT_DIR$/core/src/com/seven/game/game_world/GameWorld.java" />
+        <option value="$PROJECT_DIR$/core/src/com/seven/game/utils/AssetLoader.java" />
+        <option value="$PROJECT_DIR$/core/src/com/seven/game/game_objects/spider/BasicSpider.java" />
       </list>
     </option>
   </component>
@@ -1022,6 +1025,32 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="utils" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wysi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wysi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="org.jetbrains.plugins.gradle.projectView.GradleTreeStructureProvider$GradleSourceSetDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="game" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="game_world" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -1049,6 +1078,36 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="game_objects" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wysi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wysi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="org.jetbrains.plugins.gradle.projectView.GradleTreeStructureProvider$GradleSourceSetDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="game" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="game_objects" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="spider" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1617,12 +1676,12 @@
       <workItem from="1481391353777" duration="8374000" />
       <workItem from="1481417835962" duration="893000" />
       <workItem from="1481418864503" duration="1970000" />
-      <workItem from="1481427443565" duration="1522000" />
+      <workItem from="1481427443565" duration="2421000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12759000" />
+    <option name="totallyTimeSpent" value="13658000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1366" height="737" extended-state="1" />
@@ -1682,12 +1741,10 @@
         <state relative-caret-position="1050">
           <caret line="133" column="0" selection-start-line="133" selection-start-column="0" selection-end-line="133" selection-end-column="0" />
           <folding>
+            <element signature="e#1445#1446#0" expanded="true" />
+            <element signature="e#1476#1477#0" expanded="true" />
             <element signature="method#checkCollision#0;class#BasicSpider#0" expanded="false" />
             <element signature="method#takeDamage#0;class#BasicSpider#0" expanded="false" />
-            <element signature="method#moveUp#0;class#BasicSpider#0" expanded="false" />
-            <element signature="method#moveDown#0;class#BasicSpider#0" expanded="false" />
-            <element signature="method#moveLeft#0;class#BasicSpider#0" expanded="false" />
-            <element signature="method#moveRight#0;class#BasicSpider#0" expanded="false" />
             <element signature="method#eat#0;class#BasicSpider#0" expanded="false" />
             <element signature="method#attack#0;class#BasicSpider#0" expanded="false" />
             <element signature="method#equals#0;class#BasicSpider#0" expanded="false" />
@@ -1769,12 +1826,10 @@
         <state relative-caret-position="1995">
           <caret line="133" column="10" selection-start-line="133" selection-start-column="10" selection-end-line="133" selection-end-column="10" />
           <folding>
+            <element signature="e#1445#1446#0" expanded="true" />
+            <element signature="e#1476#1477#0" expanded="true" />
             <element signature="method#checkCollision#0;class#BasicSpider#0" expanded="false" />
             <element signature="method#takeDamage#0;class#BasicSpider#0" expanded="false" />
-            <element signature="method#moveUp#0;class#BasicSpider#0" expanded="false" />
-            <element signature="method#moveDown#0;class#BasicSpider#0" expanded="false" />
-            <element signature="method#moveLeft#0;class#BasicSpider#0" expanded="false" />
-            <element signature="method#moveRight#0;class#BasicSpider#0" expanded="false" />
             <element signature="method#eat#0;class#BasicSpider#0" expanded="false" />
             <element signature="method#attack#0;class#BasicSpider#0" expanded="false" />
             <element signature="method#equals#0;class#BasicSpider#0" expanded="false" />
@@ -1844,6 +1899,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1852,12 +1908,10 @@
         <state relative-caret-position="990">
           <caret line="129" column="46" selection-start-line="129" selection-start-column="46" selection-end-line="129" selection-end-column="46" />
           <folding>
+            <element signature="e#1445#1446#0" expanded="true" />
+            <element signature="e#1476#1477#0" expanded="true" />
             <element signature="method#checkCollision#0;class#BasicSpider#0" expanded="false" />
             <element signature="method#takeDamage#0;class#BasicSpider#0" expanded="false" />
-            <element signature="method#moveUp#0;class#BasicSpider#0" expanded="false" />
-            <element signature="method#moveDown#0;class#BasicSpider#0" expanded="false" />
-            <element signature="method#moveLeft#0;class#BasicSpider#0" expanded="false" />
-            <element signature="method#moveRight#0;class#BasicSpider#0" expanded="false" />
             <element signature="method#eat#0;class#BasicSpider#0" expanded="false" />
             <element signature="method#attack#0;class#BasicSpider#0" expanded="false" />
             <element signature="method#equals#0;class#BasicSpider#0" expanded="false" />
@@ -1986,6 +2040,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1995,62 +2050,9 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/seven/game/SScreen.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="43" selection-start-line="14" selection-start-column="43" selection-end-line="14" selection-end-column="43" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/seven/game/SGame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="9" column="27" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/seven/game/game_objects/spider/BasicSpider.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1050">
-          <caret line="133" column="0" selection-start-line="133" selection-start-column="0" selection-end-line="133" selection-end-column="0" />
-          <folding>
-            <element signature="method#checkCollision#0;class#BasicSpider#0" expanded="false" />
-            <element signature="method#takeDamage#0;class#BasicSpider#0" expanded="false" />
-            <element signature="method#moveUp#0;class#BasicSpider#0" expanded="false" />
-            <element signature="method#moveDown#0;class#BasicSpider#0" expanded="false" />
-            <element signature="method#moveLeft#0;class#BasicSpider#0" expanded="false" />
-            <element signature="method#moveRight#0;class#BasicSpider#0" expanded="false" />
-            <element signature="method#eat#0;class#BasicSpider#0" expanded="false" />
-            <element signature="method#attack#0;class#BasicSpider#0" expanded="false" />
-            <element signature="method#equals#0;class#BasicSpider#0" expanded="false" />
-            <element signature="method#hashCode#0;class#BasicSpider#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/seven/game/utils/AssetLoader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="28" column="48" selection-start-line="28" selection-start-column="48" selection-end-line="28" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/core/assets/texture.png">
       <provider selected="true" editor-type-id="images">
         <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/seven/game/game_world/GameRender.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/core/src/com/seven/game/game_objects/furniture/BasicWall.java">
@@ -2077,6 +2079,48 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/com/seven/game/game_world/GameRender.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/com/seven/game/SGame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="9" column="27" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/com/seven/game/SScreen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="43" selection-start-line="14" selection-start-column="43" selection-end-line="14" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/com/seven/game/game_world/GameWorld.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="27" column="30" selection-start-line="27" selection-start-column="30" selection-end-line="27" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/com/seven/game/utils/AssetLoader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="41" column="34" selection-start-line="41" selection-start-column="34" selection-end-line="41" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/core/src/com/seven/game/game_objects/game_object_state/StoveState.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
@@ -2090,11 +2134,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/seven/game/game_world/GameWorld.java">
+    <entry file="file://$PROJECT_DIR$/core/src/com/seven/game/game_objects/spider/BasicSpider.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
-          <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
-          <folding />
+          <caret line="144" column="30" selection-start-line="144" selection-start-column="30" selection-end-line="144" selection-end-column="30" />
+          <folding>
+            <element signature="e#1445#1446#0" expanded="true" />
+            <element signature="e#1476#1477#0" expanded="true" />
+            <element signature="method#checkCollision#0;class#BasicSpider#0" expanded="false" />
+            <element signature="method#takeDamage#0;class#BasicSpider#0" expanded="false" />
+            <element signature="method#eat#0;class#BasicSpider#0" expanded="false" />
+            <element signature="method#attack#0;class#BasicSpider#0" expanded="false" />
+            <element signature="method#equals#0;class#BasicSpider#0" expanded="false" />
+            <element signature="method#hashCode#0;class#BasicSpider#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

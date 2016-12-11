@@ -13,6 +13,7 @@ import com.seven.game.game_world.GameRender;
 import com.seven.game.game_world.IKepper;
 import com.seven.game.utils.AssetLoader;
 import com.seven.game.utils.Settings;
+import com.sun.org.apache.xpath.internal.operations.Bool;
 
 import java.util.List;
 
@@ -25,6 +26,7 @@ public class BasicSpider implements IGameObject, IAttack, IClimb, IHide, IMove, 
     private float width;
     private float height;
     private float elapsedTime = 0;
+    private Boolean isMoved = false;
 
     public BasicSpider(float velocity, IGameObjectState state, float x, float y, float rotation, float width, float height) {
         this.velocity = velocity;
@@ -34,6 +36,10 @@ public class BasicSpider implements IGameObject, IAttack, IClimb, IHide, IMove, 
         this.rotation = rotation;
         this.width = width;
         this.height = height;
+    }
+
+    public void setMoved(Boolean moved) {
+        isMoved = moved;
     }
 
     @Override
@@ -128,14 +134,21 @@ public class BasicSpider implements IGameObject, IAttack, IClimb, IHide, IMove, 
 
     @Override
     public void render(SpriteBatch spriteBatch) {
-        spriteBatch.begin();
-        elapsedTime += Gdx.graphics.getDeltaTime();
-        spriteBatch.draw(AssetLoader.spiderAnimation.getKeyFrame(elapsedTime, true), x, y, width, height);
-        spriteBatch.end();
+        if (isMoved) {
+            spriteBatch.begin();
+            elapsedTime += Gdx.graphics.getDeltaTime();
+            spriteBatch.draw(AssetLoader.spiderAnimation.getKeyFrame(elapsedTime, true), x, y, width, height);
+            spriteBatch.end();
+        } else {
+            spriteBatch.begin();
+            spriteBatch.draw(AssetLoader.staticSpider, x, y, width, height);
+            spriteBatch.end();
+        }
     }
 
     @Override
     public void moveUp(String direction, IKepper kepper) {
+        isMoved = true;
         IGameObject collidedObject = checkCollision(direction, kepper.getAllObjects());
 
         if (collidedObject == null) {
@@ -145,6 +158,7 @@ public class BasicSpider implements IGameObject, IAttack, IClimb, IHide, IMove, 
 
     @Override
     public void moveDown(String direction, IKepper kepper) {
+        isMoved = true;
         IGameObject collidedObject = checkCollision(direction, kepper.getAllObjects());
 
         if (collidedObject == null) {
@@ -154,6 +168,7 @@ public class BasicSpider implements IGameObject, IAttack, IClimb, IHide, IMove, 
 
     @Override
     public void moveLeft(String direction, IKepper kepper) {
+        isMoved = true;
         IGameObject collidedObject = checkCollision(direction, kepper.getAllObjects());
 
         if (collidedObject == null) {
@@ -163,6 +178,7 @@ public class BasicSpider implements IGameObject, IAttack, IClimb, IHide, IMove, 
 
     @Override
     public void moveRight(String direction, IKepper kepper) {
+        isMoved = true;
         IGameObject collidedObject = checkCollision(direction, kepper.getAllObjects());
 
         if (collidedObject == null) {

@@ -25,6 +25,8 @@ public class GameWorld {
     }
 
     public void update(float delta) {
+        spider1.setMoved(false);
+
         if (Gdx.input.isKeyPressed(Input.Keys.UP) && Gdx.input.isKeyPressed(Input.Keys.LEFT)) {
             spider1.moveUp("UP", Keeper.INSTANCE);
             spider1.moveLeft("LEFT", Keeper.INSTANCE);

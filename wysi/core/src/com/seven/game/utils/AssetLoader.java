@@ -14,6 +14,7 @@ public class AssetLoader {
     public static TextureRegion stoveOn;
     public static TextureRegion floor;
     public static Animation spiderAnimation;
+    public static TextureRegion staticSpider;
 
     public static void load() {
         carpet = new Texture("kover.jpg");
@@ -37,6 +38,8 @@ public class AssetLoader {
         spider.flip(false, true);
         TextureRegion spiderUp = new TextureRegion(texture, 170, 0, 17, 12);
         spiderUp.flip(false, true);
+
+        staticSpider = spiderDown;
 
         TextureRegion[] spiders = {spiderDown, spider, spiderUp};
         spiderAnimation = new Animation(1/15f, spiders);
