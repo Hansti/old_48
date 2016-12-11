@@ -16,10 +16,10 @@ public class GameWorld {
     public GameWorld() {
 
         //Walls
-        Keeper.INSTANCE.addObject(new BasicWall(0, 0, Settings.widthDisplay, 10, 0));
-        Keeper.INSTANCE.addObject(new BasicWall(0, 0, 10, Settings.heightDisplay, 0));
-        Keeper.INSTANCE.addObject(new BasicWall(Settings.widthDisplay - 10, 0, Settings.widthDisplay + 10, Settings.heightDisplay, 0));
-        Keeper.INSTANCE.addObject(new BasicWall(0, Settings.heightDisplay - 10, Settings.widthDisplay, Settings.heightDisplay, 0));
+        Keeper.INSTANCE.addObject(new BasicWall(0, 0, (Settings.widthDisplay / 2), 10, 0));
+        Keeper.INSTANCE.addObject(new BasicWall(0, 0, 10, (Settings.heightDisplay / 2), 0));
+        Keeper.INSTANCE.addObject(new BasicWall(Settings.widthDisplay / 2 - 10, 0, (Settings.widthDisplay / 2) + 10, Settings.heightDisplay /2, 0));
+        Keeper.INSTANCE.addObject(new BasicWall(0, Settings.heightDisplay / 2 - 10, (Settings.widthDisplay / 2), Settings.heightDisplay / 2, 0));
         ///////
 
         Keeper.INSTANCE.addObject(new Tv(40, 40, 30, 30, 0));
