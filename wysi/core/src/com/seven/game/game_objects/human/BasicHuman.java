@@ -10,8 +10,10 @@ import com.seven.game.game_objects.spider.BasicSpider;
 import com.seven.game.game_world.IKepper;
 import com.seven.game.game_world.Keeper;
 import com.seven.game.utils.AssetLoader;
+import com.seven.game.utils.Settings;
 
 import java.util.List;
+import java.util.Random;
 
 public class BasicHuman implements IGameObject, IAttack, IClimb, IHide, IMove, IScared {
     private float velocity;
@@ -32,6 +34,10 @@ public class BasicHuman implements IGameObject, IAttack, IClimb, IHide, IMove, I
     private int getScaredCounter = 60*5;
     private int flipOutCounter = 7;
     private BasicSpider targetSpider;
+    private int moveToCounter = 150;
+    private boolean nextMove = true;
+    private int randomX = 1;
+    private int randomY = 1;
 
     public BasicHuman(BasicSpider targetSpider, float velocity, BasicHumanState state, float x, float y, float rotation, float width, float height) {
         this.velocity = velocity;
@@ -92,6 +98,8 @@ public class BasicHuman implements IGameObject, IAttack, IClimb, IHide, IMove, I
 
     @Override
     public void update(float delta) {
+        Random random = new Random();
+
         if (state.getAngry() == true) {
             if (x < targetSpider.getX()) {
                 moveRight("RIGHT", Keeper.INSTANCE);
@@ -104,6 +112,38 @@ public class BasicHuman implements IGameObject, IAttack, IClimb, IHide, IMove, I
             } else if (y > targetSpider.getY()) {
                 moveUp("UP", Keeper.INSTANCE);
             }
+        } else if (state.getCalm() == true) {
+
+            if (nextMove) {
+                randomX = random.nextInt(Settings.widthDisplay / 2) + 1;
+                randomY = random.nextInt(Settings.heightDisplay / 2) + 1;
+            }
+
+
+
+            moveTo(randomX, randomY);
+        }
+    }
+
+    public void moveTo(float targetX, float targetY) {
+
+        if (moveToCounter > 0) {
+            if (x < targetX) {
+                moveRight("RIGHT", Keeper.INSTANCE);
+            } else if (x > targetX) {
+                moveLeft("LEFT", Keeper.INSTANCE);
+            }
+
+            if (y < targetY) {
+                moveDown("DOWN", Keeper.INSTANCE);
+            } else if (y > targetY) {
+                moveUp("UP", Keeper.INSTANCE);
+            }
+            --moveToCounter;
+            nextMove = false;
+        } else {
+            nextMove = true;
+            moveToCounter = 150;
         }
     }
 
