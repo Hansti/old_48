@@ -25,8 +25,19 @@ public class GameWorld {
     }
 
     public void update(float delta) {
-
-        if (Gdx.input.isKeyPressed(Input.Keys.UP)) {
+        if (Gdx.input.isKeyPressed(Input.Keys.UP) && Gdx.input.isKeyPressed(Input.Keys.LEFT)) {
+            spider1.moveUp("UP", Keeper.INSTANCE);
+            spider1.moveLeft("LEFT", Keeper.INSTANCE);
+        } else if (Gdx.input.isKeyPressed(Input.Keys.UP) && Gdx.input.isKeyPressed(Input.Keys.RIGHT)) {
+            spider1.moveUp("UP", Keeper.INSTANCE);
+            spider1.moveRight("RIGHT", Keeper.INSTANCE);
+        } else if (Gdx.input.isKeyPressed(Input.Keys.DOWN) && Gdx.input.isKeyPressed(Input.Keys.LEFT)) {
+            spider1.moveDown("DOWN", Keeper.INSTANCE);
+            spider1.moveLeft("LEFT", Keeper.INSTANCE);
+        } else if (Gdx.input.isKeyPressed(Input.Keys.DOWN) && Gdx.input.isKeyPressed(Input.Keys.RIGHT)) {
+            spider1.moveDown("DOWN", Keeper.INSTANCE);
+            spider1.moveRight("RIGHT", Keeper.INSTANCE);
+        } else if (Gdx.input.isKeyPressed(Input.Keys.UP)) {
             spider1.moveUp("UP", Keeper.INSTANCE);
         } else if (Gdx.input.isKeyPressed(Input.Keys.DOWN)) {
             spider1.moveDown("DOWN", Keeper.INSTANCE);
@@ -35,6 +46,7 @@ public class GameWorld {
         } else if (Gdx.input.isKeyPressed(Input.Keys.RIGHT)) {
             spider1.moveRight("RIGHT", Keeper.INSTANCE);
         }
+
     }
 
 }
