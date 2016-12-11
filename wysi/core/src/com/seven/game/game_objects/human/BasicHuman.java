@@ -41,6 +41,7 @@ public class BasicHuman implements IGameObject, IAttack, IClimb, IHide, IMove, I
     private int randomX = 1;
     private int randomY = 1;
     private int timeAngry = 60*30;
+    private int getAngryCounter = 120;
 
     public BasicHuman(BasicSpider targetSpider, float velocity, BasicHumanState state, float x, float y, float rotation, float width, float height) {
         this.velocity = velocity;
@@ -105,8 +106,13 @@ public class BasicHuman implements IGameObject, IAttack, IClimb, IHide, IMove, I
 
 
         if (Intersector.overlaps(currentObjectRectangle, speederObjectRectangle) && !targetSpider.getHide()) {
-            if (state.getCalm()) {
-                state.transitionToNewState("angry");
+            if (getAngryCounter < 1) {
+                if (state.getCalm()) {
+                    state.transitionToNewState("angry");
+                }
+                getAngryCounter = 120;
+            } else {
+                getAngryCounter--;
             }
             if (state.getAngry()) {
                 this.targetSpider.takeDamage(1);
