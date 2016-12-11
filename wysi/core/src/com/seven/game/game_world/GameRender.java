@@ -33,7 +33,7 @@ public class GameRender {
             batcher.end();
         } else if (world.getGameWin()) {
             batcher.begin();
-            batcher.draw(AssetLoader.gameOver, 0, 0, Settings.widthDisplay/2, Settings.heightDisplay/2);
+            batcher.draw(AssetLoader.gameWon, 0, 0, Settings.widthDisplay/2, Settings.heightDisplay/2);
             batcher.end();
         } else {
             batcher.begin();
