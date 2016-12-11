@@ -39,6 +39,7 @@ public class BasicHuman implements IGameObject, IAttack, IClimb, IHide, IMove, I
     private boolean nextMove = true;
     private int randomX = 1;
     private int randomY = 1;
+    private int timeAngry = 60*30;
 
     public BasicHuman(BasicSpider targetSpider, float velocity, BasicHumanState state, float x, float y, float rotation, float width, float height) {
         this.velocity = velocity;
@@ -108,6 +109,13 @@ public class BasicHuman implements IGameObject, IAttack, IClimb, IHide, IMove, I
             lose = true;
         }
 
+        if (timeAngry > 0) {
+            timeAngry--;
+        } else {
+            timeAngry = 60*60;
+            state.transitionToNewState("calm");
+        }
+
         if (state.getAngry()) {
             if (x < targetSpider.getX()) {
                 moveRight("RIGHT", Keeper.INSTANCE);
@@ -159,6 +167,9 @@ public class BasicHuman implements IGameObject, IAttack, IClimb, IHide, IMove, I
 
 
         if (Intersector.overlaps(currentObjectRectangle, speederObjectRectangle) && !targetSpider.getHide()) {
+            if (state.getCalm()) {
+                state.transitionToNewState("angry");
+            }
             if (state.getAngry()) {
                 this.targetSpider.takeDamage(1);
             } else {
