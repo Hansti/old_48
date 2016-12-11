@@ -3,12 +3,13 @@ package com.seven.game.game_objects.furniture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.seven.game.game_objects.IGameObject;
+import com.seven.game.game_objects.interactions.IClimb;
 import com.seven.game.game_objects.interactions.IHide;
 import com.seven.game.utils.AssetLoader;
 
 import java.util.List;
 
-public class BasicWall implements IGameObject, IHide{
+public class BasicWall implements IGameObject, IHide, IClimb{
     private float x;
     private float y;
     private float rotation;
@@ -89,6 +90,11 @@ public class BasicWall implements IGameObject, IHide{
 
     @Override
     public Boolean possibleToHide() {
+        return false;
+    }
+
+    @Override
+    public Boolean possibleToClimb() {
         return false;
     }
 }

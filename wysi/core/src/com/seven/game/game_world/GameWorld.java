@@ -29,7 +29,15 @@ public class GameWorld {
 
 
         //Это блок движения, и да я знаю что я мудак
-        if (Gdx.input.isKeyPressed(Input.Keys.UP) && Gdx.input.isKeyPressed(Input.Keys.CONTROL_LEFT)) {
+        if (Gdx.input.isKeyPressed(Input.Keys.UP) && Gdx.input.isKeyPressed(Input.Keys.SHIFT_LEFT)) {
+            spider1.climbUp("UP", Keeper.INSTANCE);
+        } else if (Gdx.input.isKeyPressed(Input.Keys.DOWN) && Gdx.input.isKeyPressed(Input.Keys.SHIFT_LEFT)) {
+            spider1.climbDown("DOWN", Keeper.INSTANCE);
+        } else if (Gdx.input.isKeyPressed(Input.Keys.LEFT) && Gdx.input.isKeyPressed(Input.Keys.SHIFT_LEFT)) {
+            spider1.climbLeft("LEFT", Keeper.INSTANCE);
+        } else if (Gdx.input.isKeyPressed(Input.Keys.RIGHT) && Gdx.input.isKeyPressed(Input.Keys.SHIFT_LEFT)) {
+            spider1.climbRight("RIGHT", Keeper.INSTANCE);
+        }else if (Gdx.input.isKeyPressed(Input.Keys.UP) && Gdx.input.isKeyPressed(Input.Keys.CONTROL_LEFT)) {
             spider1.hideUp("UP", Keeper.INSTANCE);
         } else if (Gdx.input.isKeyPressed(Input.Keys.DOWN) && Gdx.input.isKeyPressed(Input.Keys.CONTROL_LEFT)) {
             spider1.hideDown("DOWN", Keeper.INSTANCE);

@@ -28,6 +28,7 @@ public class BasicSpider implements IGameObject, IAttack, IClimb, IHide, IMove, 
     private float elapsedTime = 0;
     private Boolean isMoved;
     private Boolean isHide;
+    private Boolean isClimb;
 
     public BasicSpider(float velocity, IGameObjectState state, float x, float y, float rotation, float width, float height) {
         this.velocity = velocity;
@@ -39,6 +40,47 @@ public class BasicSpider implements IGameObject, IAttack, IClimb, IHide, IMove, 
         this.height = height;
         isMoved = false;
         isHide = false;
+        isClimb = false;
+    }
+
+    public void climbUp(String direction, IKepper kepper) {
+        isMoved = true;
+        IClimb collidedObject = (IClimb) checkCollision(direction, kepper.getAllObjects());
+
+        if (collidedObject != null && collidedObject.possibleToClimb()) {
+            y -= 2;
+            isClimb = true;
+        }
+    }
+
+    public void climbDown(String direction, IKepper kepper) {
+        isMoved = true;
+        IClimb collidedObject = (IClimb) checkCollision(direction, kepper.getAllObjects());
+
+        if (collidedObject != null && collidedObject.possibleToClimb()) {
+            y += 2;
+            isClimb = true;
+        }
+    }
+
+    public void climbLeft(String direction, IKepper kepper) {
+        isMoved = true;
+        IClimb collidedObject = (IClimb) checkCollision(direction, kepper.getAllObjects());
+
+        if (collidedObject != null && collidedObject.possibleToClimb()) {
+            x -= 2;
+            isClimb = true;
+        }
+    }
+
+    public void climbRight(String direction, IKepper kepper) {
+        isMoved = true;
+        IClimb collidedObject = (IClimb) checkCollision(direction, kepper.getAllObjects());
+
+        if (collidedObject != null && collidedObject.possibleToClimb()) {
+            x += 2;
+            isClimb = true;
+        }
     }
 
     public void hideUp(String direction, IKepper kepper) {
@@ -205,6 +247,7 @@ public class BasicSpider implements IGameObject, IAttack, IClimb, IHide, IMove, 
 
         if (collidedObject == null) {
             y -= 2;
+            isClimb = false;
             isHide = false;
         }
     }
@@ -217,6 +260,7 @@ public class BasicSpider implements IGameObject, IAttack, IClimb, IHide, IMove, 
 
         if (collidedObject == null) {
             y += 2;
+            isClimb = false;
             isHide = false;
         }
     }
@@ -229,6 +273,7 @@ public class BasicSpider implements IGameObject, IAttack, IClimb, IHide, IMove, 
 
         if (collidedObject == null) {
             x -= 2;
+            isClimb = false;
             isHide = false;
         }
     }
@@ -241,6 +286,7 @@ public class BasicSpider implements IGameObject, IAttack, IClimb, IHide, IMove, 
 
         if (collidedObject == null) {
             x += 2;
+            isClimb = false;
             isHide = false;
         }
     }
