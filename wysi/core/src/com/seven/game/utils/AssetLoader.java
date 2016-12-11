@@ -16,6 +16,8 @@ public class AssetLoader {
     public static Animation spiderAnimation;
     public static TextureRegion staticSpider;
 
+    public static Animation shadowSpider;
+
     public static void load() {
         carpet = new Texture("kover.jpg");
         badlogic = new Texture("badlogic.jpg");
@@ -41,9 +43,20 @@ public class AssetLoader {
 
         staticSpider = spiderDown;
 
+        TextureRegion shadowSpiderFirst = new TextureRegion(texture, 138, 25, 17, 12);
+        shadowSpiderFirst.flip(false, true);
+        TextureRegion shadowSpiderSecond = new TextureRegion(texture, 156, 25, 17, 12);
+        shadowSpiderSecond.flip(false, true);
+        TextureRegion shadowSpiderThird = new TextureRegion(texture, 173, 25, 17, 12);
+        shadowSpiderThird.flip(false, true);
+
         TextureRegion[] spiders = {spiderDown, spider, spiderUp};
+        TextureRegion[] shadowSpiders = {shadowSpiderFirst, shadowSpiderSecond, shadowSpiderThird};
+
         spiderAnimation = new Animation(1/15f, spiders);
+        shadowSpider = new Animation(1/15f, shadowSpiders);
         spiderAnimation.setPlayMode(Animation.PlayMode.LOOP);
+        shadowSpider.setPlayMode(Animation.PlayMode.LOOP);
     }
 
     public static void dispose() {
