@@ -18,6 +18,7 @@ public class AssetLoader {
     public static TextureRegion tv;
     public static TextureRegion gameOver;
     public static TextureRegion human;
+    public static TextureRegion circulView;
 
     public static Animation shadowSpider;
 
@@ -27,11 +28,13 @@ public class AssetLoader {
         texture = new Texture("texture.png");
         texture.setFilter(Texture.TextureFilter.Nearest, Texture.TextureFilter.Nearest);
 
+
         Texture gameOverTexture = new Texture("GameOver.png");
         gameOver = new TextureRegion(gameOverTexture, 400, 257);
         gameOver.flip(false, true);
 
         human = new TextureRegion(texture, 221, 23, 14, 7);
+        circulView = new TextureRegion(texture, 221, 32, 16, 16);
 
         wall = new TextureRegion(texture, 0, 33, 136, 8);
         tv = new TextureRegion(texture, 195, 21, 14, 13);

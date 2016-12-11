@@ -1,6 +1,9 @@
 package com.seven.game.game_objects.human;
 
+import com.badlogic.gdx.graphics.Cursor;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.graphics.g3d.utils.ShaderProvider;
+import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.math.Intersector;
 import com.badlogic.gdx.math.Rectangle;
 import com.seven.game.game_objects.IGameObject;
@@ -41,11 +44,6 @@ public class BasicHuman implements IGameObject, IAttack, IClimb, IHide, IMove, I
         this.rotation = rotation;
         this.width = width;
         this.height = height;
-        this.elapsedTime = elapsedTime;
-        this.isMoved = isMoved;
-        this.isHide = isHide;
-        this.isClimb = isClimb;
-        this.life = life;
         this.targetSpider = targetSpider;
     }
 
@@ -92,7 +90,7 @@ public class BasicHuman implements IGameObject, IAttack, IClimb, IHide, IMove, I
 
     @Override
     public void update(float delta) {
-        if (state.getAngry() == true) {
+        if (state.getAngry()) {
             if (x < targetSpider.getX()) {
                 moveRight("RIGHT", Keeper.INSTANCE);
             } else if (x > targetSpider.getX()) {
@@ -103,6 +101,18 @@ public class BasicHuman implements IGameObject, IAttack, IClimb, IHide, IMove, I
                 moveDown("DOWN", Keeper.INSTANCE);
             } else if (y > targetSpider.getY()) {
                 moveUp("UP", Keeper.INSTANCE);
+            }
+        }
+
+        Rectangle currentObjectRectangle = new Rectangle(x - width / 2, y - height /2, width+width, height+height);
+        Rectangle speederObjectRectangle = new Rectangle(targetSpider.getX(), targetSpider.getY(), targetSpider.getWidth(), targetSpider.getHeight());
+
+
+        if (Intersector.overlaps(currentObjectRectangle, speederObjectRectangle) && !targetSpider.getHide()) {
+            if (state.getAngry()) {
+                this.targetSpider.takeDamage(1);
+            } else {
+                this.life--;
             }
         }
     }
@@ -160,6 +170,7 @@ public class BasicHuman implements IGameObject, IAttack, IClimb, IHide, IMove, I
     @Override
     public void render(SpriteBatch spriteBatch) {
         spriteBatch.begin();
+        spriteBatch.draw(AssetLoader.circulView, x - width / 2, y - height /2, width+width, height+height);
         spriteBatch.draw(AssetLoader.human, x, y, width, height);
         spriteBatch.end();
     }
