@@ -1,5 +1,6 @@
 package com.seven.game.game_objects.human;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Intersector;
 import com.badlogic.gdx.math.Rectangle;
@@ -30,7 +31,7 @@ public class BasicHuman implements IGameObject, IAttack, IClimb, IHide, IMove, I
     private Boolean isMoved;
     private Boolean isHide;
     private Boolean isClimb;
-    private int life = 300;
+    private int life = 50;
     private Boolean lose = false;
     private int getScaredCounter = 60*5;
     private int flipOutCounter = 7 - 4;
@@ -99,6 +100,22 @@ public class BasicHuman implements IGameObject, IAttack, IClimb, IHide, IMove, I
 
     @Override
     public void update(float delta) {
+        Rectangle currentObjectRectangle = new Rectangle(x - width / 2 , y - height /2, width+width, height+height);
+        Rectangle speederObjectRectangle = new Rectangle(targetSpider.getX(), targetSpider.getY(), targetSpider.getWidth(), targetSpider.getHeight());
+
+
+        if (Intersector.overlaps(currentObjectRectangle, speederObjectRectangle) && !targetSpider.getHide()) {
+            if (state.getCalm()) {
+                state.transitionToNewState("angry");
+            }
+            if (state.getAngry()) {
+                this.targetSpider.takeDamage(1);
+            } else {
+                this.life--;
+            }
+        }
+
+
         Random random = new Random();
         if (life <= 0) {
             flipOutCounter--;
@@ -142,7 +159,6 @@ public class BasicHuman implements IGameObject, IAttack, IClimb, IHide, IMove, I
     }
 
     public void moveTo(float targetX, float targetY) {
-
         if (moveToCounter > 0) {
             if (x < targetX) {
                 moveRight("RIGHT", Keeper.INSTANCE);
@@ -162,20 +178,6 @@ public class BasicHuman implements IGameObject, IAttack, IClimb, IHide, IMove, I
             moveToCounter = 150;
         }
 
-        Rectangle currentObjectRectangle = new Rectangle(x - width / 2, y - height /2, width+width, height+height);
-        Rectangle speederObjectRectangle = new Rectangle(targetSpider.getX(), targetSpider.getY(), targetSpider.getWidth(), targetSpider.getHeight());
-
-
-        if (Intersector.overlaps(currentObjectRectangle, speederObjectRectangle) && !targetSpider.getHide()) {
-            if (state.getCalm()) {
-                state.transitionToNewState("angry");
-            }
-            if (state.getAngry()) {
-                this.targetSpider.takeDamage(1);
-            } else {
-                this.life--;
-            }
-        }
     }
 
     @Override

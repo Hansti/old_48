@@ -30,7 +30,7 @@ public class BasicSpider implements IGameObject, IAttack, IClimb, IHide, IMove, 
     private Boolean isHide;
     private Boolean isClimb;
     private Boolean isDead;
-    private int life = 100;
+    private int life = 400;
 
     public BasicSpider(float velocity, IGameObjectState state, float x, float y, float rotation, float width, float height) {
         this.velocity = velocity;
