@@ -10,6 +10,7 @@ public class AssetLoader {
     public static Texture badlogic;
     public static Texture texture;
     public static TextureRegion wall;
+    public static TextureRegion stove;
     public static Animation spiderAnimation;
 
     public static void load() {
@@ -18,7 +19,9 @@ public class AssetLoader {
         texture = new Texture("texture.png");
         texture.setFilter(Texture.TextureFilter.Nearest, Texture.TextureFilter.Nearest);
 
+
         wall = new TextureRegion(texture, 0, 33, 136, 8);
+        stove = new TextureRegion(texture, 195, 0, 14, 14);
 
         TextureRegion spiderDown = new TextureRegion(texture, 136, 0, 17, 12);
         spiderDown.flip(false, true);

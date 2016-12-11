@@ -127,7 +127,7 @@ public class Stove implements IGameObject, IHide, IClimb, IAttack {
     public void render(SpriteBatch spriteBatch) {
         spriteBatch.begin();
         spriteBatch.disableBlending();
-        spriteBatch.draw(AssetLoader.badlogic, x, y, width, height);
+        spriteBatch.draw(AssetLoader.stove, x, y, width, height);
         spriteBatch.enableBlending();
         spriteBatch.end();
     }
