@@ -30,9 +30,10 @@ public class BasicHuman implements IGameObject, IAttack, IClimb, IHide, IMove, I
     private Boolean isMoved;
     private Boolean isHide;
     private Boolean isClimb;
-    private int life = 100;
+    private int life = 300;
+    private Boolean lose = false;
     private int getScaredCounter = 60*5;
-    private int flipOutCounter = 7;
+    private int flipOutCounter = 7 - 4;
     private BasicSpider targetSpider;
     private int moveToCounter = 150;
     private boolean nextMove = true;
@@ -47,12 +48,11 @@ public class BasicHuman implements IGameObject, IAttack, IClimb, IHide, IMove, I
         this.rotation = rotation;
         this.width = width;
         this.height = height;
-        this.elapsedTime = elapsedTime;
-        this.isMoved = isMoved;
-        this.isHide = isHide;
-        this.isClimb = isClimb;
-        this.life = life;
         this.targetSpider = targetSpider;
+    }
+
+    public Boolean getLose() {
+        return lose;
     }
 
     @Override
@@ -84,7 +84,7 @@ public class BasicHuman implements IGameObject, IAttack, IClimb, IHide, IMove, I
 
     @Override
     public Boolean possibleToClimb() {
-        return false;
+        return true;
     }
 
     @Override
@@ -99,8 +99,16 @@ public class BasicHuman implements IGameObject, IAttack, IClimb, IHide, IMove, I
     @Override
     public void update(float delta) {
         Random random = new Random();
+        if (life <= 0) {
+            flipOutCounter--;
+            life = 200;
+        }
 
-        if (state.getAngry() == true) {
+        if (flipOutCounter <= 0) {
+            lose = true;
+        }
+
+        if (state.getAngry()) {
             if (x < targetSpider.getX()) {
                 moveRight("RIGHT", Keeper.INSTANCE);
             } else if (x > targetSpider.getX()) {
@@ -144,6 +152,18 @@ public class BasicHuman implements IGameObject, IAttack, IClimb, IHide, IMove, I
         } else {
             nextMove = true;
             moveToCounter = 150;
+        }
+
+        Rectangle currentObjectRectangle = new Rectangle(x - width / 2, y - height /2, width+width, height+height);
+        Rectangle speederObjectRectangle = new Rectangle(targetSpider.getX(), targetSpider.getY(), targetSpider.getWidth(), targetSpider.getHeight());
+
+
+        if (Intersector.overlaps(currentObjectRectangle, speederObjectRectangle) && !targetSpider.getHide()) {
+            if (state.getAngry()) {
+                this.targetSpider.takeDamage(1);
+            } else {
+                this.life--;
+            }
         }
     }
 
@@ -200,7 +220,8 @@ public class BasicHuman implements IGameObject, IAttack, IClimb, IHide, IMove, I
     @Override
     public void render(SpriteBatch spriteBatch) {
         spriteBatch.begin();
-        spriteBatch.draw(AssetLoader.staticSpider, x, y, width, height);
+        spriteBatch.draw(AssetLoader.circulView, x - width / 2, y - height /2, width+width, height+height);
+        spriteBatch.draw(AssetLoader.human, x, y, width, height);
         spriteBatch.end();
     }
 
