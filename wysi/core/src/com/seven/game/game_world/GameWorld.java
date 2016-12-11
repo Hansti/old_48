@@ -28,7 +28,7 @@ public class GameWorld {
 
     public void createGame() {
         gameOver = false;
-        gameOver = false;
+        gameWin = false;
         spider1 = new BasicSpider(10, null, 100, 100, 0, 15, 15);
         human1 = new BasicHuman(spider1, 0, new BasicHumanState(), 300, 300, 0, 30, 30);
         human1.getCalm();
