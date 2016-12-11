@@ -131,6 +131,7 @@ public class BasicSpider implements IGameObject, IAttack, IClimb, IHide, IMove, 
         spriteBatch.begin();
         elapsedTime += Gdx.graphics.getDeltaTime();
         spriteBatch.draw(AssetLoader.birdAnimation.getKeyFrame(elapsedTime, true), x, y, width, height);
+        //spriteBatch.draw(AssetLoader.spider, x, y);
         spriteBatch.end();
     }
 

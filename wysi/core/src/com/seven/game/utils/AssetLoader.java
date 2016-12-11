@@ -13,7 +13,7 @@ public class AssetLoader {
 
     public static void load() {
         carpet = new Texture("kover.jpg");
-        spider = new Texture("temp_spider.png");
+        spider = new Texture("badlogic.jpg");
         texture = new Texture("texture.png");
         texture.setFilter(Texture.TextureFilter.Nearest, Texture.TextureFilter.Nearest);
 
