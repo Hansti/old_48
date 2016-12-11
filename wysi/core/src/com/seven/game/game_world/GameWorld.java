@@ -28,6 +28,7 @@ public class GameWorld {
 
     public void createGame() {
         gameOver = false;
+        gameWin = false;
         spider1 = new BasicSpider(10, null, 100, 100, 0, 15, 15);
         human1 = new BasicHuman(spider1, 0, new BasicHumanState(), 300, 300, 0, 30, 30);
         human1.getCalm();
@@ -59,6 +60,10 @@ public class GameWorld {
 
         if(human1.getLose()) {
             gameWin = true;
+            if (Gdx.input.isKeyPressed(Input.Keys.R)) {
+                disposeGame();
+                createGame();
+            }
         }
 
         if (spider1.getDead()) {

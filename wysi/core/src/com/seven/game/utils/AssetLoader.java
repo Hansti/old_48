@@ -20,6 +20,8 @@ public class AssetLoader {
     public static TextureRegion human;
     public static TextureRegion circulView;
 
+    public static TextureRegion gameWon;
+
     public static Animation shadowSpider;
 
     public static void load() {
@@ -32,6 +34,10 @@ public class AssetLoader {
         Texture gameOverTexture = new Texture("GameOver.png");
         gameOver = new TextureRegion(gameOverTexture, 400, 257);
         gameOver.flip(false, true);
+
+        Texture gameWonTexture = new Texture("won.jpg");
+        gameWon = new TextureRegion(gameWonTexture, 400, 300);
+        gameWon.flip(false, true);
 
         human = new TextureRegion(texture, 221, 23, 14, 7);
         circulView = new TextureRegion(texture, 221, 32, 16, 16);
