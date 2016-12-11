@@ -11,24 +11,31 @@ import com.seven.game.game_objects.spider.BasicSpider;
 import com.seven.game.utils.Settings;
 
 public class GameWorld {
-    private BasicSpider spider1 = new BasicSpider(10, null, 100, 100, 0, 30, 30);
+    private BasicSpider spider1;
     private Boolean gameOver = false;
 
     public GameWorld() {
+        createGame();
+    }
 
-        //Walls
+    public void createGame() {
+        gameOver = false;
+        spider1 = new BasicSpider(10, null, 100, 100, 0, 30, 30);
         Keeper.INSTANCE.addObject(new BasicWall(0, 0, (Settings.widthDisplay / 2), 10, 0));
         Keeper.INSTANCE.addObject(new BasicWall(0, 0, 10, (Settings.heightDisplay / 2), 0));
         Keeper.INSTANCE.addObject(new BasicWall(Settings.widthDisplay / 2 - 10, 0, (Settings.widthDisplay / 2) + 10, Settings.heightDisplay /2, 0));
         Keeper.INSTANCE.addObject(new BasicWall(0, Settings.heightDisplay / 2 - 10, (Settings.widthDisplay / 2), Settings.heightDisplay / 2, 0));
-        ///////
 
         Keeper.INSTANCE.addObject(new Tv(40, 40, 30, 30, 0));
         Keeper.INSTANCE.addObject(new Stove(500,10, 50,50, 0,new StoveState()));
         Keeper.INSTANCE.addObject(spider1);
     }
 
-    
+    public void disposeGame() {
+        for(IGameObject object: Keeper.INSTANCE.getAllObjects()) {
+            Keeper.INSTANCE.getAllObjects().remove(object);
+        }
+    }
 
     public Boolean getGameOver() {
         return gameOver;
@@ -39,6 +46,10 @@ public class GameWorld {
 
         if (spider1.getDead()) {
             gameOver = true;
+            if (Gdx.input.isKeyPressed(Input.Keys.R)) {
+                disposeGame();
+                createGame();
+            }
         } else {
             //Это блок движения, и да я знаю что я мудак
             if (Gdx.input.isKeyPressed(Input.Keys.UP) && Gdx.input.isKeyPressed(Input.Keys.SHIFT_LEFT)) {
