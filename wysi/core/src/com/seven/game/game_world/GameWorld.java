@@ -5,6 +5,7 @@ import com.badlogic.gdx.Input;
 import com.seven.game.game_objects.IGameObject;
 import com.seven.game.game_objects.furniture.BasicWall;
 import com.seven.game.game_objects.furniture.Stove;
+import com.seven.game.game_objects.furniture.Tv;
 import com.seven.game.game_objects.game_object_state.StoveState;
 import com.seven.game.game_objects.spider.BasicSpider;
 import com.seven.game.utils.Settings;
@@ -21,6 +22,7 @@ public class GameWorld {
         Keeper.INSTANCE.addObject(new BasicWall(0, Settings.heightDisplay - 10, Settings.widthDisplay, Settings.heightDisplay, 0));
         ///////
 
+        Keeper.INSTANCE.addObject(new Tv(40, 40, 30, 30, 0));
         Keeper.INSTANCE.addObject(new Stove(500,10, 50,50, 0,new StoveState()));
         Keeper.INSTANCE.addObject(spider1);
     }

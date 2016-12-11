@@ -15,6 +15,7 @@ public class AssetLoader {
     public static TextureRegion floor;
     public static Animation spiderAnimation;
     public static TextureRegion staticSpider;
+    public static TextureRegion tv;
 
     public static Animation shadowSpider;
 
@@ -26,6 +27,7 @@ public class AssetLoader {
 
 
         wall = new TextureRegion(texture, 0, 33, 136, 8);
+        tv = new TextureRegion(texture, 195, 21, 14, 13);
         stoveOff = new TextureRegion(texture, 195, 0, 14, 14);
         stoveOff.flip(false, true);
 
