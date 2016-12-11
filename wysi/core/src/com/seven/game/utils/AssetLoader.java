@@ -17,6 +17,7 @@ public class AssetLoader {
     public static TextureRegion staticSpider;
     public static TextureRegion tv;
     public static TextureRegion gameOver;
+    public static TextureRegion human;
 
     public static Animation shadowSpider;
 
@@ -30,6 +31,8 @@ public class AssetLoader {
         gameOver = new TextureRegion(gameOverTexture, 400, 257);
         gameOver.flip(false, true);
 
+        human = new TextureRegion(texture, 221, 23, 14, 7);
+
         wall = new TextureRegion(texture, 0, 33, 136, 8);
         tv = new TextureRegion(texture, 195, 21, 14, 13);
         stoveOff = new TextureRegion(texture, 195, 0, 14, 14);
@@ -38,7 +41,7 @@ public class AssetLoader {
         stoveOn = new TextureRegion(texture, 214, 0, 14, 14);
         stoveOn.flip(false, true);
 
-        floor = new TextureRegion(texture, 137, 16, 18, 3);
+        floor = new TextureRegion(texture, 137, 16, 17, 3);
 
         TextureRegion spiderDown = new TextureRegion(texture, 136, 0, 17, 12);
         spiderDown.flip(false, true);

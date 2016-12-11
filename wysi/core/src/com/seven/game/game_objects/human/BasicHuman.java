@@ -78,7 +78,7 @@ public class BasicHuman implements IGameObject, IAttack, IClimb, IHide, IMove, I
 
     @Override
     public Boolean possibleToClimb() {
-        return false;
+        return true;
     }
 
     @Override
@@ -160,7 +160,7 @@ public class BasicHuman implements IGameObject, IAttack, IClimb, IHide, IMove, I
     @Override
     public void render(SpriteBatch spriteBatch) {
         spriteBatch.begin();
-        spriteBatch.draw(AssetLoader.staticSpider, x, y, width, height);
+        spriteBatch.draw(AssetLoader.human, x, y, width, height);
         spriteBatch.end();
     }
 
