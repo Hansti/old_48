@@ -31,10 +31,10 @@ public class BasicHuman implements IGameObject, IAttack, IClimb, IHide, IMove, I
     private Boolean isMoved;
     private Boolean isHide;
     private Boolean isClimb;
-    private int life = 50;
+    private int life = 60;
     private Boolean lose = false;
     private int getScaredCounter = 60*5;
-    private int flipOutCounter = 7 - 4;
+    private int flipOutCounter = 7 - 3;
     private BasicSpider targetSpider;
     private int moveToCounter = 150;
     private boolean nextMove = true;
@@ -103,7 +103,8 @@ public class BasicHuman implements IGameObject, IAttack, IClimb, IHide, IMove, I
     public void update(float delta) {
         Rectangle currentObjectRectangle = new Rectangle(x - width / 2 , y - height /2, width+width, height+height);
         Rectangle speederObjectRectangle = new Rectangle(targetSpider.getX(), targetSpider.getY(), targetSpider.getWidth(), targetSpider.getHeight());
-
+        Gdx.app.log("life boss", "Life Boss On = " + String.valueOf(life));
+        Gdx.app.log("life boss", "Life Boss Main = " + String.valueOf(flipOutCounter));
 
         if (Intersector.overlaps(currentObjectRectangle, speederObjectRectangle) && !targetSpider.getHide()) {
             if (getAngryCounter < 1) {
@@ -125,7 +126,7 @@ public class BasicHuman implements IGameObject, IAttack, IClimb, IHide, IMove, I
         Random random = new Random();
         if (life <= 0) {
             flipOutCounter--;
-            life = 200;
+            life = 60;
         }
 
         if (flipOutCounter <= 0) {
