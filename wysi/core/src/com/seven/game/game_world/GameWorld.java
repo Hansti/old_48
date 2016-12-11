@@ -31,7 +31,7 @@ public class GameWorld {
         gameWin = false;
         spider1 = new BasicSpider(10, null, 100, 100, 0, 15, 15);
         human1 = new BasicHuman(spider1, 0, new BasicHumanState(), 300, 300, 0, 30, 30);
-        human1.getAngry();
+        human1.getCalm();
 
         Keeper.INSTANCE.addObject(new BasicWall(0, 0, (Settings.widthDisplay / 2), 10, 0));
         Keeper.INSTANCE.addObject(new BasicWall(0, 0, 10, (Settings.heightDisplay / 2), 0));

@@ -233,8 +233,12 @@ public class BasicHuman implements IGameObject, IAttack, IClimb, IHide, IMove, I
     @Override
     public void render(SpriteBatch spriteBatch) {
         spriteBatch.begin();
-        spriteBatch.draw(AssetLoader.circulView, x - width / 2, y - height /2, width+width, height+height);
+
         spriteBatch.draw(AssetLoader.human, x, y, width, height);
+
+        if (state.getCalm()){
+            spriteBatch.draw(AssetLoader.circulView, x - width / 2, y - height /2, width+width, height+height);
+        }
         spriteBatch.end();
     }
 
