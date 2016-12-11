@@ -6,12 +6,15 @@ import com.seven.game.game_objects.IGameObject;
 import com.seven.game.game_objects.furniture.BasicWall;
 import com.seven.game.game_objects.furniture.Stove;
 import com.seven.game.game_objects.furniture.Tv;
+import com.seven.game.game_objects.game_object_state.BasicHumanState;
 import com.seven.game.game_objects.game_object_state.StoveState;
+import com.seven.game.game_objects.human.BasicHuman;
 import com.seven.game.game_objects.spider.BasicSpider;
 import com.seven.game.utils.Settings;
 
 public class GameWorld {
-    private BasicSpider spider1 = new BasicSpider(10, null, 100, 100, 0, 30, 30);
+    private BasicSpider spider1 = new BasicSpider(10, null, 100, 100, 0, 15, 15);
+    private BasicHuman human1 = new BasicHuman(spider1, 0, new BasicHumanState(), 300, 300, 0, 30, 30);
 
     public GameWorld() {
 
@@ -25,6 +28,9 @@ public class GameWorld {
         Keeper.INSTANCE.addObject(new Tv(40, 40, 30, 30, 0));
         Keeper.INSTANCE.addObject(new Stove(500,10, 50,50, 0,new StoveState()));
         Keeper.INSTANCE.addObject(spider1);
+
+
+        Keeper.INSTANCE.addObject(human1);
     }
 
     public void update(float delta) {
