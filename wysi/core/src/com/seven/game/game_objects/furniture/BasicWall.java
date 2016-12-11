@@ -77,17 +77,6 @@ public class BasicWall implements IGameObject{
         this.rotation = rotation;
     }
 
-
-    @Override
-    public IGameObject checkCollision(String direction, List<IGameObject> gameObjectList) {
-        return null;
-    }
-
-    @Override
-    public void takeDamage(int damage) {
-
-    }
-
     @Override
     public void render(SpriteBatch spriteBatch) {
         spriteBatch.begin();

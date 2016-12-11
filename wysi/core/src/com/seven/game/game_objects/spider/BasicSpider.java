@@ -128,11 +128,6 @@ public class BasicSpider implements IGameObject, IAttack, IClimb, IHide, IMove, 
     }
 
     @Override
-    public void takeDamage(int damage) {
-
-    }
-
-    @Override
     public void render(SpriteBatch spriteBatch) {
         if (isMoved) {
             spriteBatch.begin();
@@ -202,11 +197,6 @@ public class BasicSpider implements IGameObject, IAttack, IClimb, IHide, IMove, 
     }
 
     @Override
-    public void attack(IGameObject gameObject) {
-
-    }
-
-    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof BasicSpider)) return false;
@@ -233,5 +223,10 @@ public class BasicSpider implements IGameObject, IAttack, IClimb, IHide, IMove, 
         result = 31 * result + (getWidth() != +0.0f ? Float.floatToIntBits(getWidth()) : 0);
         result = 31 * result + (getHeight() != +0.0f ? Float.floatToIntBits(getHeight()) : 0);
         return result;
+    }
+
+    @Override
+    public void attack(IDamage gameObject) {
+
     }
 }

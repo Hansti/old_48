@@ -10,6 +10,7 @@ import com.seven.game.game_objects.IGameObject;
 import com.seven.game.game_objects.game_object_state.StoveState;
 import com.seven.game.game_objects.interactions.IAttack;
 import com.seven.game.game_objects.interactions.IClimb;
+import com.seven.game.game_objects.interactions.IDamage;
 import com.seven.game.game_objects.interactions.IHide;
 import com.seven.game.utils.AssetLoader;
 
@@ -91,41 +92,6 @@ public class Stove implements IGameObject, IHide, IClimb, IAttack {
     }
 
     @Override
-    public IGameObject checkCollision(String direction, List<IGameObject> gameObjectList) {
-        float xTranslation = x;
-        float yTranslation = y;
-
-        if (direction.equals("UP")) {
-            yTranslation = y - 2;
-        } else if (direction.equals("DOWN")) {
-            yTranslation = y + 2;
-        } else if (direction.equals("LEFT")) {
-            xTranslation = x - 2;
-        } else if (direction.equals("RIGHT")) {
-            xTranslation = x + 2;
-        }
-
-        Rectangle currentObjectRectangle = new Rectangle(xTranslation, yTranslation, width, height);
-
-        for (IGameObject gameObject : gameObjectList) {
-            if (!this.equals(gameObject)) {
-                Rectangle gameObjectRectangle = new Rectangle(gameObject.getX(), gameObject.getY(), gameObject.getWidth(), gameObject.getHeight());
-
-                if (Intersector.overlaps(currentObjectRectangle, gameObjectRectangle)) {
-                    return gameObject;
-                }
-            }
-        }
-
-        return null;
-    }
-
-    @Override
-    public void takeDamage(int damage) {
-
-    }
-
-    @Override
     public void render(SpriteBatch spriteBatch) {
         if (Gdx.input.isKeyPressed(Input.Keys.F12)) {
             if (state.getState()) {
@@ -162,7 +128,7 @@ public class Stove implements IGameObject, IHide, IClimb, IAttack {
     }
 
     @Override
-    public void attack(IGameObject gameObject) {
+    public void attack(IDamage gameObject) {
         gameObject.takeDamage(10);
     }
 }
