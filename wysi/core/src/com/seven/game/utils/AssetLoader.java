@@ -7,26 +7,29 @@ import com.badlogic.gdx.graphics.g2d.TextureRegion;
 
 public class AssetLoader {
     public static Texture carpet;
-    public static Texture spider;
+    public static Texture badlogic;
     public static Texture texture;
-    public static Animation birdAnimation;
+    public static TextureRegion wall;
+    public static Animation spiderAnimation;
 
     public static void load() {
         carpet = new Texture("kover.jpg");
-        spider = new Texture("badlogic.jpg");
+        badlogic = new Texture("badlogic.jpg");
         texture = new Texture("texture.png");
         texture.setFilter(Texture.TextureFilter.Nearest, Texture.TextureFilter.Nearest);
 
-        //Testtttttttttttttttttttttttttttttttttttttttttttttttttttt
-        TextureRegion birdDown = new TextureRegion(texture, 136, 0, 17, 12);
-        birdDown.flip(false, true);
-        TextureRegion bird = new TextureRegion(texture, 153, 0, 17, 12);
-        bird.flip(false, true);
-        TextureRegion birdUp = new TextureRegion(texture, 170, 0, 17, 12);
-        birdUp.flip(false, true);
-        TextureRegion[] birds = {birdDown, bird, birdUp};
-        birdAnimation = new Animation(1/15f, birds);
-        birdAnimation.setPlayMode(Animation.PlayMode.LOOP);
+        wall = new TextureRegion(texture, 0, 33, 136, 8);
+
+        TextureRegion spiderDown = new TextureRegion(texture, 136, 0, 17, 12);
+        spiderDown.flip(false, true);
+        TextureRegion spider = new TextureRegion(texture, 153, 0, 17, 12);
+        spider.flip(false, true);
+        TextureRegion spiderUp = new TextureRegion(texture, 170, 0, 17, 12);
+        spiderUp.flip(false, true);
+
+        TextureRegion[] spiders = {spiderDown, spider, spiderUp};
+        spiderAnimation = new Animation(1/15f, spiders);
+        spiderAnimation.setPlayMode(Animation.PlayMode.LOOP);
     }
 
     public static void dispose() {

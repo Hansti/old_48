@@ -14,10 +14,10 @@ public class GameWorld {
     public GameWorld() {
 
         //Walls
-        Keeper.INSTANCE.addObject(new BasicWall(0, 0, Settings.widthDisplay, 30, 0));
-        Keeper.INSTANCE.addObject(new BasicWall(0, 0, 30, Settings.heightDisplay, 0));
-        Keeper.INSTANCE.addObject(new BasicWall(Settings.widthDisplay - 30, 0, Settings.widthDisplay + 30, Settings.heightDisplay, 0));
-        Keeper.INSTANCE.addObject(new BasicWall(0, Settings.heightDisplay - 30, Settings.widthDisplay, Settings.heightDisplay, 0));
+        Keeper.INSTANCE.addObject(new BasicWall(0, 0, Settings.widthDisplay, 10, 0));
+        Keeper.INSTANCE.addObject(new BasicWall(0, 0, 10, Settings.heightDisplay, 0));
+        Keeper.INSTANCE.addObject(new BasicWall(Settings.widthDisplay - 10, 0, Settings.widthDisplay + 10, Settings.heightDisplay, 0));
+        Keeper.INSTANCE.addObject(new BasicWall(0, Settings.heightDisplay - 10, Settings.widthDisplay, Settings.heightDisplay, 0));
         ///////
 
         Keeper.INSTANCE.addObject(new Stove(500,300, 50,50, 0,new StoveState()));

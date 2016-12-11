@@ -92,7 +92,7 @@ public class BasicWall implements IGameObject{
     public void render(SpriteBatch spriteBatch) {
         spriteBatch.begin();
         spriteBatch.disableBlending();
-        spriteBatch.draw(AssetLoader.spider, x, y, width, height);
+        spriteBatch.draw(AssetLoader.wall, x, y, width, height);
         spriteBatch.enableBlending();
         spriteBatch.end();
     }
