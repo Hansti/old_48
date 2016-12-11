@@ -15,6 +15,7 @@ import com.seven.game.game_world.Keeper;
 import com.seven.game.utils.AssetLoader;
 
 import java.util.List;
+import java.util.jar.Pack200;
 
 public class BasicHuman implements IGameObject, IAttack, IClimb, IHide, IMove, IScared {
     private float velocity;
@@ -31,9 +32,10 @@ public class BasicHuman implements IGameObject, IAttack, IClimb, IHide, IMove, I
     private Boolean isMoved;
     private Boolean isHide;
     private Boolean isClimb;
-    private int life = 100;
+    private int life = 300;
+    private Boolean lose = false;
     private int getScaredCounter = 60*5;
-    private int flipOutCounter = 7;
+    private int flipOutCounter = 7 - 4;
     private BasicSpider targetSpider;
 
     public BasicHuman(BasicSpider targetSpider, float velocity, BasicHumanState state, float x, float y, float rotation, float width, float height) {
@@ -45,6 +47,10 @@ public class BasicHuman implements IGameObject, IAttack, IClimb, IHide, IMove, I
         this.width = width;
         this.height = height;
         this.targetSpider = targetSpider;
+    }
+
+    public Boolean getLose() {
+        return lose;
     }
 
     @Override
@@ -90,6 +96,14 @@ public class BasicHuman implements IGameObject, IAttack, IClimb, IHide, IMove, I
 
     @Override
     public void update(float delta) {
+        if (life <= 0) {
+            flipOutCounter--;
+        }
+
+        if (flipOutCounter <= 0) {
+            lose = true;
+        }
+
         if (state.getAngry()) {
             if (x < targetSpider.getX()) {
                 moveRight("RIGHT", Keeper.INSTANCE);

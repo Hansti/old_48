@@ -16,9 +16,14 @@ public class GameWorld {
     private BasicHuman human1;
     private BasicSpider spider1;
     private Boolean gameOver = false;
+    private Boolean gameWin = false;
 
     public GameWorld() {
         createGame();
+    }
+
+    public Boolean getGameWin() {
+        return gameWin;
     }
 
     public void createGame() {
@@ -51,6 +56,10 @@ public class GameWorld {
 
     public void update(float delta) {
         spider1.setMoved(false);
+
+        if(human1.getLose()) {
+            gameWin = true;
+        }
 
         if (spider1.getDead()) {
             gameOver = true;
