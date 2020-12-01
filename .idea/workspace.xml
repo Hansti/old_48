@@ -22,107 +22,22 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f9a0f209-cbdd-4ab9-b001-ae08f1cedfdf" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/thriftCompiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+    <list default="true" id="f9a0f209-cbdd-4ab9-b001-ae08f1cedfdf" name="Default Changelist" comment="refactor">
+      <change afterPath="$PROJECT_DIR$/core/assets/11111.ogg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.4.1/fileContent/annotation-processors.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.4.1/fileContent/annotation-processors.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.4.1/fileContent/fileContent.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.4.1/fileContent/fileContent.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.4.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.4.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.4.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.4.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.4.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.4.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.4.1/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.4.1/taskHistory/taskHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.4.1/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.4.1/taskHistory/taskHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/core/badlogic.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wysi/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wysi/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wysi/.idea/copyright/profiles_settings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wysi/.idea/gradle.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wysi/.idea/libraries/Gradle__com_badlogicgames_ashley_ashley_1_7_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wysi/.idea/libraries/Gradle__com_badlogicgames_box2dlights_box2dlights_1_4.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wysi/.idea/libraries/Gradle__com_badlogicgames_gdx_gdx_1_9_4.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wysi/.idea/libraries/Gradle__com_badlogicgames_gdx_gdx_ai_1_8_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wysi/.idea/libraries/Gradle__com_badlogicgames_gdx_gdx_backend_headless_1_9_4.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wysi/.idea/libraries/Gradle__com_badlogicgames_gdx_gdx_backend_lwjgl_1_9_4.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wysi/.idea/libraries/Gradle__com_badlogicgames_gdx_gdx_box2d_1_9_4.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wysi/.idea/libraries/Gradle__com_badlogicgames_gdx_gdx_box2d_platform_natives_desktop_1_9_4.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wysi/.idea/libraries/Gradle__com_badlogicgames_gdx_gdx_bullet_1_9_4.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wysi/.idea/libraries/Gradle__com_badlogicgames_gdx_gdx_bullet_platform_natives_desktop_1_9_4.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wysi/.idea/libraries/Gradle__com_badlogicgames_gdx_gdx_controllers_1_9_4.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wysi/.idea/libraries/Gradle__com_badlogicgames_gdx_gdx_controllers_desktop_1_9_4.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wysi/.idea/libraries/Gradle__com_badlogicgames_gdx_gdx_controllers_platform_natives_desktop_1_9_4.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wysi/.idea/libraries/Gradle__com_badlogicgames_gdx_gdx_freetype_1_9_4.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wysi/.idea/libraries/Gradle__com_badlogicgames_gdx_gdx_freetype_platform_natives_desktop_1_9_4.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wysi/.idea/libraries/Gradle__com_badlogicgames_gdx_gdx_platform_natives_desktop_1_9_4.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wysi/.idea/libraries/Gradle__com_badlogicgames_gdx_gdx_tools_1_9_4.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wysi/.idea/libraries/Gradle__com_badlogicgames_jlayer_jlayer_1_0_1_gdx.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wysi/.idea/libraries/Gradle__net_java_jinput_jinput_2_0_5.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wysi/.idea/libraries/Gradle__net_java_jinput_jinput_platform_natives_linux_2_0_5.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wysi/.idea/libraries/Gradle__net_java_jinput_jinput_platform_natives_osx_2_0_5.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wysi/.idea/libraries/Gradle__net_java_jinput_jinput_platform_natives_windows_2_0_5.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wysi/.idea/libraries/Gradle__net_java_jutils_jutils_1_0_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wysi/.idea/libraries/Gradle__org_jcraft_jorbis_0_0_17.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wysi/.idea/libraries/Gradle__org_lwjgl_lwjgl_lwjgl_2_9_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wysi/.idea/libraries/Gradle__org_lwjgl_lwjgl_lwjgl_platform_natives_linux_2_9_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wysi/.idea/libraries/Gradle__org_lwjgl_lwjgl_lwjgl_platform_natives_osx_2_9_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wysi/.idea/libraries/Gradle__org_lwjgl_lwjgl_lwjgl_platform_natives_windows_2_9_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wysi/.idea/libraries/Gradle__org_lwjgl_lwjgl_lwjgl_util_2_9_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wysi/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wysi/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wysi/.idea/modules/core/core.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wysi/.idea/modules/core/core_main.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wysi/.idea/modules/core/core_test.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wysi/.idea/modules/desktop/desktop.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wysi/.idea/modules/desktop/desktop_main.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wysi/.idea/modules/desktop/desktop_test.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wysi/.idea/modules/wysi.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wysi/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wysi/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wysi/core/assets/GameOver.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wysi/core/assets/badlogic.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wysi/core/assets/kover.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wysi/core/assets/texture.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wysi/core/assets/won.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wysi/core/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wysi/core/core.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wysi/core/src/com/seven/game/SGame.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wysi/core/src/com/seven/game/SScreen.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wysi/core/src/com/seven/game/game_objects/IGameObject.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wysi/core/src/com/seven/game/game_objects/furniture/BasicWall.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wysi/core/src/com/seven/game/game_objects/furniture/Stove.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wysi/core/src/com/seven/game/game_objects/furniture/Tv.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wysi/core/src/com/seven/game/game_objects/game_object_state/BasicHumanState.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wysi/core/src/com/seven/game/game_objects/game_object_state/IGameObjectState.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wysi/core/src/com/seven/game/game_objects/game_object_state/StoveState.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wysi/core/src/com/seven/game/game_objects/human/BasicHuman.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wysi/core/src/com/seven/game/game_objects/interactions/IAttack.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wysi/core/src/com/seven/game/game_objects/interactions/IClimb.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wysi/core/src/com/seven/game/game_objects/interactions/IDamage.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wysi/core/src/com/seven/game/game_objects/interactions/IEat.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wysi/core/src/com/seven/game/game_objects/interactions/IHide.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wysi/core/src/com/seven/game/game_objects/interactions/IMove.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wysi/core/src/com/seven/game/game_objects/interactions/IScared.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wysi/core/src/com/seven/game/game_objects/spider/BasicSpider.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wysi/core/src/com/seven/game/game_world/GameRender.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wysi/core/src/com/seven/game/game_world/GameWorld.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wysi/core/src/com/seven/game/game_world/IKepper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wysi/core/src/com/seven/game/game_world/Keeper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wysi/core/src/com/seven/game/utils/AssetLoader.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wysi/core/src/com/seven/game/utils/Settings.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wysi/desktop/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wysi/desktop/desktop.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wysi/desktop/src/com/seven/game/desktop/DesktopLauncher.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wysi/gradle.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wysi/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wysi/gradlew" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wysi/gradlew.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wysi/out/production/core/badlogic.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wysi/settings.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wysi/wysi.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wysi/wysi.ipr" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wysi/wysi.iws" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/distributions/basic-multiproject-1.0.tar" beforeDir="false" afterPath="$PROJECT_DIR$/build/distributions/basic-multiproject-1.0.tar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/distributions/basic-multiproject-1.0.zip" beforeDir="false" afterPath="$PROJECT_DIR$/build/distributions/basic-multiproject-1.0.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/com/seven/game/SGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/seven/game/SGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/com/seven/game/utils/AssetLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/seven/game/utils/AssetLoader.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -158,6 +73,11 @@
     </system>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MavenImportPreferences">
@@ -183,13 +103,18 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/build.gradle" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/core/assets" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
     <property name="show.unlinked.gradle.project.popup" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/core/assets" />
+    </key>
   </component>
   <component name="RunManager" selected="Application.DesktopLauncher">
     <configuration name="DesktopLauncher" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -273,8 +198,23 @@
       <option name="presentableId" value="Default" />
       <updated>1606844420733</updated>
       <workItem from="1606844425233" duration="2006000" />
-      <workItem from="1606846457045" duration="2248000" />
+      <workItem from="1606846457045" duration="3521000" />
     </task>
+    <task id="LOCAL-00001" summary="refactor">
+      <created>1606848924821</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1606848924821</updated>
+    </task>
+    <task id="LOCAL-00002" summary="refactor">
+      <created>1606848968812</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1606848968812</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -291,6 +231,10 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="refactor" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor" />
   </component>
   <component name="WindowStateProjectService">
     <state width="1878" height="280" key="GridCell.Tab.0.bottom" timestamp="1606848522115">
@@ -313,6 +257,10 @@
       <screen x="0" y="0" width="1920" height="1048" />
     </state>
     <state x="449" y="159" width="1028" height="840" key="SettingsEditor/0.0.1920.1048@0.0.1920.1048" timestamp="1606845905723" />
+    <state x="555" y="247" width="804" height="550" key="Vcs.Push.Dialog.v2" timestamp="1606849167585">
+      <screen x="0" y="0" width="1920" height="1048" />
+    </state>
+    <state x="555" y="247" width="804" height="550" key="Vcs.Push.Dialog.v2/0.0.1920.1048@0.0.1920.1048" timestamp="1606849167585" />
     <state x="653" y="268" width="614" height="512" key="find.popup" timestamp="1606847994916">
       <screen x="0" y="0" width="1920" height="1048" />
     </state>

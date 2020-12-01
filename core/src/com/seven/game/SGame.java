@@ -8,6 +8,9 @@ public class SGame extends Game{
     @Override
     public void create() {
         AssetLoader.load();
+        AssetLoader.music.setLooping(true);
+        AssetLoader.music.play();
+
         Gdx.app.log("SGame", "created");
         setScreen(new SScreen());
     }

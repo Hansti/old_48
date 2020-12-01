@@ -1,6 +1,7 @@
 package com.seven.game.utils;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Animation;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
@@ -23,6 +24,7 @@ public class AssetLoader {
     public static TextureRegion gameWon;
 
     public static Animation shadowSpider;
+    public static Music music = Gdx.audio.newMusic(Gdx.files.internal("11111.ogg"));
 
     public static void load() {
         carpet = new Texture("kover.jpg");
