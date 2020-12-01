@@ -1,0 +1,40 @@
+buildscript {
+    repositories {
+        mavenLocal()
+        mavenCentral()
+        maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
+        jcenter()
+    }
+}
+
+plugins {
+    id 'java'
+    id 'application'
+}
+
+mainClassName = "com.seven.game.desktop.DesktopLauncher"
+
+version = '1.2.1'
+
+allprojects {
+    repositories {
+        mavenLocal()
+        mavenCentral()
+        maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
+        jcenter()
+    }
+
+
+
+    apply plugin: "idea"
+
+    version = '1.0'
+    ext {
+        appName = "wher-you-see-it"
+        gdxVersion = '1.9.4'
+        roboVMVersion = '2.2.0'
+        box2DLightsVersion = '1.4'
+        ashleyVersion = '1.7.0'
+        aiVersion = '1.8.0'
+    }
+}

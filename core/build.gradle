@@ -1,0 +1,20 @@
+apply plugin: "java"
+
+[compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
+
+sourceSets.main.java.srcDirs = [ "src/" ]
+
+dependencies {
+    implementation "com.badlogicgames.gdx:gdx:1.9.4"
+    /*implementation "com.badlogicgames.gdx:gdx-backend-lwjgl:1.9.4"
+    implementation "com.badlogicgames.gdx:gdx-backend-headless:1.9.4"*/
+    //implementation "com.badlogicgames.gdx:gdx-backend-gwt:1.9.4"
+    //implementation "com.badlogicgames.gdx:gdx-backend-lwjgl:$gdxVersion"
+    //implementation "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-desktop"
+    //implementation "com.badlogicgames.gdx:gdx-box2d-platform:$gdxVersion:natives-desktop"
+/*    implementation "com.badlogicgames.gdx:gdx-tools:$gdxVersion"
+    implementation "com.badlogicgames.gdx:gdx-freetype-platform:$gdxVersion:natives-desktop"
+    implementation "com.badlogicgames.gdx:gdx-bullet-platform:$gdxVersion:natives-desktop"
+    implementation "com.badlogicgames.gdx:gdx-controllers-desktop:$gdxVersion"
+    implementation "com.badlogicgames.gdx:gdx-controllers-platform:$gdxVersion:natives-desktop"*/
+}
